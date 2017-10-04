@@ -17,9 +17,10 @@ feature -- Equality
 	is_equal(other: like Current): BOOLEAN
 			-- Is the current slot status equal to 'other'?
 		do
-			-- Your task.
+			Result := Current ~ other --maybe change ~ to =
+
 		ensure then
-			correct_result: True
-				-- Your task
+			correct_result:
+			(Current = other) = (TRUE or FALSE)
 		end
 end

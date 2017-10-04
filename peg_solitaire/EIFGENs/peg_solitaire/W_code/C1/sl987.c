@@ -78,32 +78,41 @@ label_1:
 		RTCF;
 	}
 body:;
+	RTHOOK(2);
+	RTDBGAL(Current, 0, 0x04000000, 1,0); /* Result */
+	Result = (EIF_BOOLEAN) RTCEQ(Current, arg1);
 	if (RTAL & CK_ENSURE) {
-		RTHOOK(2);
+		RTHOOK(3);
 		RTCT("symmetric", EX_POST);
-		if ((!((EIF_BOOLEAN) 0) || (RTEQ(arg1, Current)))) {
+		if ((!(Result) || (RTEQ(arg1, Current)))) {
 			RTCK;
 		} else {
 			RTCF;
 		}
-		RTHOOK(3);
+		RTHOOK(4);
 		RTCT("consistent", EX_POST);
 		tb1 = '\01';
 		ur1 = RTCCL(arg1);
 		tb2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(12, dtype))(Current, ur1x)).it_b);
 		if (tb2) {
-			tb1 = (EIF_BOOLEAN) 0;
+			tb1 = Result;
 		}
 		if (tb1) {
 			RTCK;
 		} else {
 			RTCF;
 		}
-		RTHOOK(4);
+		RTHOOK(5);
+		RTCT("correct_result", EX_POST);
+		if ((EIF_BOOLEAN)(RTCEQ(Current, arg1) == (EIF_BOOLEAN) 1)) {
+			RTCK;
+		} else {
+			RTCF;
+		}
 	}
 	RTVI(Current, RTAL);
 	RTRS;
-	RTHOOK(5);
+	RTHOOK(6);
 	RTDBGLE;
 	RTMD(0);
 	RTLE;

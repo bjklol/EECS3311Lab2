@@ -107,7 +107,7 @@ E1/eparents.o: Makefile E1/Makefile E1/estructure.h
 
 OBJECTS= C2/Cobj2.o C1/Cobj1.o  E1/eoption.o E1/epattern.o E1/efrozen.o E1/ecall.o E1/eplug.o E1/eskelet.o E1/enames.o E1/evisib.o E1/ececil.o E1/einit.o E1/eparents.o
 
-PRECOMP_OBJECTS= "/home/ty/.es/eiffel_user_files/17.05/precomp/spec/unix/EIFGENs/base-safe/W_code/preobj.o"
+PRECOMP_OBJECTS= "/cs/local/packages/Eiffel17.05/precomp/spec/linux-x86-64/EIFGENs/base-safe/W_code/preobj.o"
 
 
 peg_solitaire: $(OBJECTS)  E1/emain.o Makefile

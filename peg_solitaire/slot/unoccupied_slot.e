@@ -26,11 +26,11 @@ feature -- Output
 	out: STRING
 			-- String representation of current slot.
 		do
-			create Result.make_empty
+			create Result.make_from_string (".")
 			-- Your task: the current implementation
 			-- may not be correct.
 		ensure then
-			correct_result: True
+			correct_result: Result = "."
 				-- Your task.
 		end
 end
