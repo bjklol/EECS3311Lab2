@@ -197,8 +197,6 @@ feature -- Auxiliary Commands
 			i:=i+1
 		end
 
-
-		end
 		ensure
 			slots_in_range_set:
 			from
@@ -218,6 +216,7 @@ feature -- Auxiliary Commands
 			end
 			i:=i+1
 		end
+
 			slots_not_in_range_unchanged:
 			matches_slots_except(old Current, r1, r2, c1, c2)
 				-- Hint: Use query 'matches_slots_except'.
@@ -231,18 +230,12 @@ feature -- Auxiliary Queries
 			-- rows 'r1' to 'r2' and columns 'c1' and 'c2'
 			-- match in Current and 'other'.
 		require
-			consistent_row_numbers: True
-				-- Your task.
-			consistent_column_numbers: True
-				-- Your task.
-			valid_rows: True
-				-- Your task.
-			valid_columns: True
-				-- Your task.
-			valid_row_range: True
-				-- Your task.
-			valid_column_range: True
-				-- Your task.
+					consistent_row_number : Current.number_of_rows = other.number_of_rows
+					consistent_column_number: Current.number_of_columns = other.number_of_columns
+					valid_rows: is_valid_row(r1) and is_valid_row(r2)
+					valid_columns: is_valid_column(c1) and is_valid_column(c2)
+					valid_row_range: r1 <= r2
+					valid_column_range: c1 <= c2
 		do
 			-- Your task.
 		ensure
