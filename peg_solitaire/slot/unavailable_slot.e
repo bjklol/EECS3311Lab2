@@ -24,16 +24,15 @@ feature {SLOT_STATUS_ACCESS} -- Constructor
 
 feature -- Output
 	out: STRING
-		
+
 
 			-- String representation of current slot.
 		do
-			create Result.make_from_string("*")
+			create Result.make_empty
 
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure then
-			correct_result: Result = "*"
-				-- Your task.
+
+		ensure then --make sure the empty intiializes to the asterisk
+			correct_result: Result.is_equal ("*")
+
 		end
 end

@@ -10,29 +10,26 @@ expanded class
 feature -- Accesses
 	unavailable_slot: UNAVAILABLE_SLOT
 			-- Return the unavailable status of a slot.
-		do
-			-- Your task: the current implementation
-			-- may not be correct.
+		once
 			create Result.make
 		end
 
 	occupied_slot: OCCUPIED_SLOT
 			-- Return the occupied status of a slot.
-		do
-			-- Your task: the current implementation
-			-- may not be correct.
+		once
+
 			create Result.make
 		end
 
 	unoccupied_slot: UNOCCUPIED_SLOT
 			-- Return the unoccupied status of a slot.
-		do
-			-- Your task: the current implementation
-			-- may not be correct.
+		once
 			create Result.make
 		end
 
 invariant
-	singleton_slot_statuses: True
-		-- Your task.
+	singleton_slot_statuses: -- check that each slot status is ensured
+		occupied_slot = occupied_slot and
+		unoccupied_slot = unoccupied_slot and
+		unavailable_slot = unavailable_slot
 end

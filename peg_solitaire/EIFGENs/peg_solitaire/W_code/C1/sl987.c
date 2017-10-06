@@ -80,7 +80,7 @@ label_1:
 body:;
 	RTHOOK(2);
 	RTDBGAL(Current, 0, 0x04000000, 1,0); /* Result */
-	Result = (EIF_BOOLEAN) RTCEQ(Current, arg1);
+	Result = (EIF_BOOLEAN) RTEQ(Current, arg1);
 	if (RTAL & CK_ENSURE) {
 		RTHOOK(3);
 		RTCT("symmetric", EX_POST);

@@ -26,11 +26,9 @@ feature -- Output
 	out: STRING
 			-- String representation of current slot.
 		do
-			create Result.make_from_string (".")
-			-- Your task: the current implementation
-			-- may not be correct.
+			create Result.make_empty
+		Result := "."
 		ensure then
-			correct_result: Result = "."
-				-- Your task.
+			correct_result: Result.is_equal(".")
 		end
 end

@@ -26,11 +26,10 @@ feature -- Output
 	out: STRING
 			-- String representation of current slot.
 		do
-			create Result.make_from_string ("O")
-			-- Your task: the current implementation
-			-- may not be correct.
+		create Result.make_empty
+				Result := "O"
 		ensure then
-			correct_result: Result = "O"
-				-- Your task.
+			correct_result: Result.is_equal("O")
+			
 		end
 end

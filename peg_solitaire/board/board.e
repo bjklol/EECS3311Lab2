@@ -30,8 +30,8 @@ feature -- Constructor
 		do
 			create imp.make_filled (unavailable_slot, 7, 7)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			Current ~ bta.templates.default_board
 		end
 
 	make_easy
@@ -52,85 +52,119 @@ feature -- Constructor
 	make_cross
 			-- Initialize a Cross board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+		create imp.make_filled (unoccupied_slot, 7, 7)
+
+			set_statuses (6, 7, 1, 2, unavailable_slot)
+			set_statuses (1, 2, 1, 2, unavailable_slot)
+			set_statuses (1, 2, 6, 7, unavailable_slot)
+			set_statuses (6, 7, 6, 7, unavailable_slot)
+			set_status (3, 3, occupied_slot)
+			set_status (3, 5, occupied_slot)
+			set_statuses (2, 5, 4, 4, occupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			Current.is_equal (bta.templates.cross_board)
 		end
 
 	make_plus
 			-- Initialize a Plus board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+
+					set_statuses (6, 7, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 6, 7, unavailable_slot)
+					set_statuses (6, 7, 6, 7, unavailable_slot)
+					set_statuses (4, 4, 2, 6, occupied_slot)
+					set_statuses (2, 6, 4, 4, occupied_slot)
+
+
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			 	Current.is_equal (bta.templates.plus_board)
 		end
 
 	make_pyramid
 			-- Initialize a Pyramid board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+					set_statuses (6, 7, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 6, 7, unavailable_slot)
+					set_statuses (6, 7, 6, 7, unavailable_slot)
+					set_statuses (3, 3, 3, 5, occupied_slot)
+					set_statuses (2, 2, 4, 4, occupied_slot)
+					set_statuses (5, 5, 1, 7, occupied_slot)
+					set_statuses (4, 4, 2, 6, occupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set: 	Current.is_equal (bta.templates.pyramid_board)
 		end
 
 	make_arrow
 			-- Initialize a Arrow board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			set_statuses (6, 7, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 6, 7, unavailable_slot)
+					set_statuses (6, 7, 6, 7, unavailable_slot)
+					set_status (3, 2, occupied_slot)
+					set_status (3, 6, occupied_slot)
+					set_statuses (6, 7, 3, 5, occupied_slot)
+					set_statuses (1, 5, 4, 4, occupied_slot)
+					set_statuses (2, 3, 3, 5, occupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set: 	Current.is_equal (bta.templates.arrow_board)
 		end
 
 	make_diamond
 			-- Initialize a Diamond board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+	set_statuses (6, 7, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 1, 2, unavailable_slot)
+					set_statuses (1, 2, 6, 7, unavailable_slot)
+					set_statuses (6, 7, 6, 7, unavailable_slot)
+					set_status (1, 3, unoccupied_slot)
+					set_status (4, 4, unoccupied_slot)
+					set_status (1, 5, unoccupied_slot)
+					set_status (3, 1, unoccupied_slot)
+					set_status (7, 5, unoccupied_slot)
+					set_status (5, 1, unoccupied_slot)
+					set_status (5, 7, unoccupied_slot)
+					set_status (3, 7, unoccupied_slot)
+					set_status (7, 3, unoccupied_slot)
+
 		ensure
-			board_set: True
-				-- Your task.
+			board_set: 	Current.is_equal (bta.templates.diamond_board)
 		end
 
 	make_skull
 			-- Initialize a Skull board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+		set_statuses (6, 7, 1, 2, unavailable_slot)
+				set_statuses (1, 2, 1, 2, unavailable_slot)
+				set_statuses (1, 2, 6, 7, unavailable_slot)
+				set_statuses (6, 7, 6, 7, unavailable_slot)
+				set_status (4, 3, unoccupied_slot)
+				set_status (4, 5, unoccupied_slot)
+				set_statuses (3, 5, 1, 1, unoccupied_slot)
+				set_statuses (3, 5, 7, 7, unoccupied_slot)
 		ensure
-			board_set: True
-				-- Your task.
+			board_set: 	Current.is_equal (bta.templates.skull_board)
 		end
 
 feature -- Auxiliary Commands
 	set_status (r, c: INTEGER; status: SLOT_STATUS)
 			-- Set the status of slot at row 'r' and column 'c' to 'status'.
 		require
-			valid_row: True
-				-- Your task.
-			valid_column: True
-				-- Your task.
+			valid_row:
+			is_valid_row(r)
+			valid_column:
+				is_valid_column(c)
 		do
-			-- Your task.
+		imp.put (status, r, c)
 		ensure
-			slot_set: True
-				-- Your task.
-			slots_not_in_range_unchanged: True
-				-- Your task.
-				-- Hint: Use query 'matches_slots_except'.
+			slot_set:
+			imp.item (r, c).is_equal (status)
+			slots_not_in_range_unchanged:
+			matches_slots_except(old Current, r, r, c, c)
 		end
 
 	set_statuses (r1, r2, c1, c2: INTEGER; status: SLOT_STATUS)
@@ -138,21 +172,54 @@ feature -- Auxiliary Commands
 			-- intersection of rows 'r1' to 'r2' and
 			-- columns 'c1' to 'c2'.
 		require
-			valid_rows: True
-				-- Your task.
-			valid_columns: True
-				-- Your task.
-			valid_row_range: True
-				-- Your task.
-			valid_column_range: True
-				-- Your task.
-		do
-			-- Your task.
+		valid_rows: is_valid_row(r1) and is_valid_row(r2)
+			valid_columns: is_valid_column(c1) and is_valid_column(c2)
+			valid_row_range: r1 <= r2
+			valid_column_range: c1 <= c2
+		do --Test these
+		from
+			i:= 1
+		until
+			i = 7
+		loop
+			from
+				j:= 1
+			until
+				j=7
+			loop
+			if
+						(i.item >= r1 and i.item <= r2) and
+						(j.item >= c1 and j.item <= c2)
+					then
+						imp.put (status, i.item, j.item)
+					j:= j+1
+			end
+			i:=i+1
+		end
+
+
+		end
 		ensure
-			slots_in_range_set: True
-				-- Your task.
-			slots_not_in_range_unchanged: True
-				-- Your task.
+			slots_in_range_set:
+			from
+			i:= 1
+		until
+			i = 7
+		loop
+			from
+				j:= 1
+			until
+				j=7
+			loop
+			if
+					(i.item >= r1 and j.item >= c1 and i.item <= r2 and j.item <= c2
+										implies status_of(i.item, j.item) ~ status)
+					j:= j+1
+			end
+			i:=i+1
+		end
+			slots_not_in_range_unchanged:
+			matches_slots_except(old Current, r1, r2, c1, c2)
 				-- Hint: Use query 'matches_slots_except'.
 		end
 
@@ -180,12 +247,22 @@ feature -- Auxiliary Queries
 			-- Your task.
 		ensure
 			correct_result: True
-				-- Your task.
-				-- Hint: write two nested across expressions to
-				-- iterate through all slots. Each slot is identified
-				-- by its row and column numbers. If the slot location
-				-- is not witin 'r1', 'r2', 'c1', and 'c2', then
-				-- its value in 'Current' is equal to that in 'other'.
+			from
+					i:= 1
+				until
+					i = 7
+				loop
+					from
+						j:= 1
+					until
+						j=7
+					loop
+						if(i.item < r1 or i.item > r2) or (j.item < c1 or j.item > c2)
+							then
+							Result := Current.status_of (i.item, j.item).is_equal (other.status_of (i.item, j.item))
+						j:= j+1
+					end
+					i:=i+1
 		end
 
 	unavailable_slot: UNAVAILABLE_SLOT
