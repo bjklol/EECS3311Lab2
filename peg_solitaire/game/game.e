@@ -29,8 +29,7 @@ feature -- Constructors
 		do
 			board := new_board
 		ensure
-			board_set: True
-				-- Your task.
+		board_set: board = new_board
 		end
 
 	make_easy
@@ -45,172 +44,169 @@ feature -- Constructors
 	make_cross
 			-- Initialize a game with Cross board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+		create board.make_cross
+
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			board ~ bta.templates.cross_board
 		end
 
 	make_plus
 			-- Initialize a game with Plus board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			create board.make_plus
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			board ~ bta.templates.plus_board
 		end
+
 
 	make_pyramid
 			-- Initialize a game with Pyramid board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			create board.make_pyramid
+
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			board ~ bta.templates.pyramid_board
 		end
 
 	make_arrow
-			-- Initialize a game with Arrow board.
+			-- Initialize a game with Arrow board.	
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
-		ensure
-			board_set: True
-				-- Your task.
+				create board.make_arrow
+			ensure
+				board_set:
+				 board ~ bta.templates.arrow_board
 		end
 
 	make_diamond
 			-- Initialize a game with Diamond board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			create board.make_diamond
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			 board ~ bta.templates.diamond_board
 		end
 
 	make_skull
 			-- Initialize a game with Skull board.
 		do
-			make_easy
-			-- Your task: the current implementation
-			-- may not be correct.
+			create board.make_skull
 		ensure
-			board_set: True
-				-- Your task.
+			board_set:
+			 board ~ bta.templates.skull_board
 		end
 
 feature -- Commands
 	move_left (r, c: INTEGER)
 		require
-			from_slot_valid_row: True
-				-- Your task.
-			from_slot_valid_column: True
-				-- Your task.
-			middle_slot_valid_column: True
-				-- Your task.
-			to_slot_valid_column: True
-				-- Your task.
-			from_slot_occupied: True
-				-- Your task.
-			middle_slot_occupied: True
-				-- Your task.
-			to_slot_unoccupied: True
-				-- Your task.
+		from_slot_valid_row:
+				board.is_valid_row (r)
+			from_slot_valid_column:
+				board.is_valid_column (c)
+			middle_slot_valid_column:
+				board.is_valid_column (c - 1)
+			to_slot_valid_column:
+				board.is_valid_column (c - 2)
+			from_slot_occupied:
+				board.status_of (r,c) = board.occupied_slot
+			middle_slot_occupied:
+				board.status_of (r,c - 1) = board.occupied_slot
+			to_slot_unoccupied:
+				board.status_of (r,c - 2) = board.unoccupied_slot
 		do
-			-- Your task.
+		board.set_status (r,c - 2,board.occupied_slot)
+		board.set_statuses (r, r, c - 1, c, board.unoccupied_slot)
 		ensure
-			slots_properly_set: True
-				-- Your task.
-			other_slots_unchanged: True
-				-- Your task.
-				-- Hint: Use 'matches_slots_except' feature from BOARD.
+			slots_properly_set:
+			board.status_of (r, c) ~ board.unoccupied_slot
+			and board.status_of (r, c-1) ~ board.unoccupied_slot
+			and board.status_of (r, c-2) ~ board.occupied_slot
+			other_slots_unchanged:
+			board.matches_slots_except (old board, r, r, c, c)
+
 		end
 
 	move_right (r, c: INTEGER)
 		require
-			from_slot_valid_row: True
-				-- Your task.
-			from_slot_valid_column: True
-				-- Your task.
-			middle_slot_valid_column: True
-				-- Your task.
-			to_slot_valid_column: True
-				-- Your task.
-			from_slot_occupied: True
-				-- Your task.
-			middle_slot_occupied: True
-				-- Your task.
-			to_slot_unoccupied: True
-				-- Your task.
+		from_slot_valid_row:
+				board.is_valid_row (r)
+			from_slot_valid_column:
+				board.is_valid_column (c)
+			middle_slot_valid_column:
+				board.is_valid_column (c + 1)
+			to_slot_valid_column:
+				board.is_valid_column (c + 2)
+			from_slot_occupied:
+				board.status_of (r,c) = board.occupied_slot
+			middle_slot_occupied:
+				board.status_of (r,c + 1) = board.occupied_slot
+			to_slot_unoccupied:
+				board.status_of (r,c + 2) = board.unoccupied_slot
 		do
-			-- Your task.
+			board.set_status (r,c + 2,board.occupied_slot)
+			board.set_statuses (r, r, c, c + 1, board.unoccupied_slot)
 		ensure
-			slots_properly_set: True
-				-- Your task.
-			other_slots_unchanged: True
-				-- Your task.
-				-- Hint: Use 'matches_slots_except' from BOARD.
+			slots_properly_set:
+			board.status_of (r, c) ~ board.unoccupied_slot
+			and board.status_of (r, c+1) ~ board.unoccupied_slot
+			and board.status_of (r, c+2) ~ board.occupied_slot
+
+			other_slots_unchanged: board.matches_slots_except (old board, r, r, c, c)
 		end
 
 	move_up (r, c: INTEGER)
 		require
-			from_slot_valid_column: True
-				-- Your task.
-			from_slot_valid_row: True
-				-- Your task.
-			middle_slot_valid_row: True
-				-- Your task.
-			to_slot_valid_row: True
-				-- Your task.
-			from_slot_occupied: True
-				-- Your task.
-			middle_slot_occupied: True
-				-- Your task.
-			to_slot_unoccupied: True
-				-- Your task.
+		from_slot_valid_column:
+				board.is_valid_column (c)
+			from_slot_valid_row:
+				board.is_valid_row (r)
+			middle_slot_valid_row:
+				board.is_valid_row (r - 1)
+			to_slot_valid_row:
+				board.is_valid_row (r - 2)
+			from_slot_occupied:
+				board.status_of (r,c) = board.occupied_slot
+			middle_slot_occupied:
+				board.status_of (r - 1,c) = board.occupied_slot
+			to_slot_unoccupied:
+				board.status_of (r - 2,c) = board.unoccupied_slot
 		do
-			-- Your task.
+			board.set_status (r - 2,c,board.occupied_slot)
+			board.set_statuses (r - 1, r, c, c, board.unoccupied_slot)
 		ensure
-			slots_properly_set: True
-				-- Your task.
-			other_slots_unchanged: True
-				-- Your task.
-				-- Hint: Use 'matches_slots_except' from BOARD.
+		slots_properly_set:
+		board.status_of (r, c) ~ board.unoccupied_slot
+		and board.status_of (r-1, c) ~ board.unoccupied_slot
+		and board.status_of (r-2, c) ~ board.occupied_slot
+		other_slots_unchanged: board.matches_slots_except (old board, r, r, c, c)
 		end
 
 	move_down (r, c: INTEGER)
 		require
-			from_slot_valid_column: True
-				-- Your task.
-			from_slot_valid_row: True
-				-- Your task.
-			middle_slot_valid_row: True
-				-- Your task.
-			to_slot_valid_row: True
-				-- Your task.
-			from_slot_occupied: True
-				-- Your task.
-			middle_slot_occupied: True
-				-- Your task.
-			to_slot_unoccupied: True
-				-- Your task.
+			from_slot_valid_column:
+				board.is_valid_column (c)
+			from_slot_valid_row:
+				board.is_valid_row (r)
+			middle_slot_valid_row:
+				board.is_valid_row (r - 1)
+			to_slot_valid_row:
+				board.is_valid_row (r - 2)
+			from_slot_occupied:
+				board.status_of (r,c) = board.occupied_slot
+			middle_slot_occupied:
+				board.status_of (r - 1,c) = board.occupied_slot
+			to_slot_unoccupied:
+				board.status_of (r - 2,c) = board.unoccupied_slot
 		do
-			-- Your task.
+			board.set_status (r+2,c,board.occupied_slot)
+			board.set_statuses (r, r+1, c, c, board.unoccupied_slot)
 		ensure
-			slots_properly_set: True
-				-- Your task.
-			other_slots_unchanged: True
-				-- Your task.
-				-- Hint: Use 'matches_slots_except' from BOARD.
+		slots_properly_set: board.status_of (r, c) ~ board.unoccupied_slot
+		and board.status_of (r+1, c) ~ board.unoccupied_slot
+		and board.status_of (r+2, c) ~ board.occupied_slot
+		other_slots_unchanged: board.matches_slots_except (old board, r, r, c, c)
 		end
 
 feature -- Status Queries
@@ -232,13 +228,50 @@ feature -- Status Queries
 			-- Has the current game been won?
 			-- i.e., there's only one occupied slot on the board.
 		do
-			-- Your task.
+		-- if a position is still moveable then the game is not over
+		Result := false
+			across 1 |..| 7 as i all
+				across 1 |..| 7 as j all
+					-- Check left move
+									if ( (i >= 3 and then board.status_of(i, j) ~ board.occupied_slot)
+										and board.status_of(i-2, j) ~ board.unoccupied_slot
+										and board.status_of (i-1, j) ~ board.occupied_slot )
+									then
+										Result := FALSE
+									end
+
+									-- Check Right move
+									if ((i <= 5 and then board.status_of(i, j) ~ board.occupied_slot)
+										and (board.status_of(i+2, j) ~ board.unoccupied_slot
+										and board.status_of (i+1, j) ~ board.occupied_slot)) then
+											Result := FALSE
+										end
+
+									-- Check down move
+									if ((j <= 5 and board.status_of(i, j) ~ board.occupied_slot)
+										and (board.status_of(i, j+2) ~ board.unoccupied_slot
+										and board.status_of (i, j+1) ~ board.occupied_slot))
+										then
+											Result := FALSE
+										end
+
+									--Check up move
+									if ((j >= 3 and board.status_of(i, j) ~ board.occupied_slot)
+										and (board.status_of(i, j-2) ~ board.unoccupied_slot
+										and board.status_of (i, j-1) ~ board.occupied_slot))
+										then
+											Result := FALSE
+										end
+
+		end
+			end
+			end
 		ensure
 			game_won_iff_one_occupied_slot_left: True
 				-- Your task.
 				-- Hint: Use 'number_of_occupied_slots' from BOARD.
 			winning_a_game_means_game_over:
-				-- Your task.
+			Result = (is_over = TRUE)
 		end
 
 feature -- Output

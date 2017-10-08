@@ -195,7 +195,8 @@ feature -- Auxiliary Commands
 					j:= j+1
 			end
 			i:=i+1
-		end
+	end
+
 
 		ensure
 			slots_in_range_set:
@@ -237,9 +238,24 @@ feature -- Auxiliary Queries
 					valid_row_range: r1 <= r2
 					valid_column_range: c1 <= c2
 		do
-			-- Your task.
+			from
+					i:= 1
+				until
+					i = 7
+				loop
+					from
+						j:= 1
+					until
+						j=7
+					loop
+						if(i.item < r1 or i.item > r2) or (j.item < c1 or j.item > c2)
+							then
+							Result := Current.status_of (i.item, j.item).is_equal (other.status_of (i.item, j.item))
+						j:= j+1
+					end
+					i:=i+1
 		ensure
-			correct_result: True
+			correct_result:
 			from
 					i:= 1
 				until
@@ -286,71 +302,84 @@ feature -- Queries
 	number_of_rows: INTEGER
 			-- Number of rows in the board of game.
 		do
-			-- Your task.
+		Result:= imp.height
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result: Result = imp.height
+
 		end
 
 	number_of_columns: INTEGER
 			-- Number of columns in the board of game.
 		do
-			-- Your task.
+		 Result:= imp.width
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result: Result = imp.width
+
 		end
 
 	is_valid_row (r: INTEGER): BOOLEAN
 			-- Is 'r' a valid row number?
 		do
-			-- Your task.
+			Result := 	(r <= Current.number_of_rows) and (r >= 1)
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+		(r <= Current.number_of_rows) and (r >= 1)
 		end
 
 	is_valid_column (c: INTEGER): BOOLEAN
 			-- Is 'x' a valid column number?
 		do
-			-- Your task.
+		Result := c >= 1 and c <= Current.number_of_columns
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+		(c >= Current.number_of_columns) and (c <= 1)
 		end
 
 	status_of (r, c: INTEGER): SLOT_STATUS
 			-- Is the slot at row 'r' and column 'c'
 			-- unavailable, occupied, or unoccupied?
 		require
-			valid_row: True
-				-- Your task.
-			valid_column: True
-				-- Your task.
+			valid_row: is_valid_row(r)
+			valid_column: is_valid_column(c)
 		do
-			Result := ssa.unavailable_slot
-			-- Your task: the current implementation
-			-- may not be correct.
+		Result := imp.item (r, c)
+
 		ensure
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = imp.item (r, c)
 		end
 
 	number_of_occupied_slots: INTEGER
 			-- Number of slots occupied by pegs on current board.
 		do
-			-- Your task.
-			-- No postcondition is needed for this auxiliary query.
+		Result :=0
+		from
+					i:= 1
+				until
+					i = 7
+				loop
+					from
+						j:= 1
+					until
+						j=7
+					loop
+						if imp.item(i.item,j.item)/is_equal(ssa.occupied_slot) then
+							then
+							Result := Result + 1
+						j:= j+1
+					end
+					i:=i+1
+				end
 		end
 
 feature -- Equality
 	is_equal (other: like Current): BOOLEAN
 			-- Is current board equal to 'other'?
 		do
-			-- Your task.
+		Result := Current.out.is_equal (other.out)
 		ensure then
-			correct_result: True
-				-- Your task.
+			correct_result:
+				Result = Current.out.is_equal (other.out)
 		end
 
 feature -- Output
@@ -358,9 +387,36 @@ feature -- Output
 			-- String representation of current board.
 		do
 			create Result.make_empty
-			-- Your task: the current implementation
-			-- may not be correct.
-			-- No postcondition is needed for this query.
+			create out.make_empty
+		from
+						i:= 1
+					until
+						i = 7
+					loop
+						from
+							j:= 1
+						until
+							j=7
+						loop
+						if
+											imp.item (i.item, j.item).is_equal (ssa.occupied_slot)
+										then
+											out.append ("O")
+										elseif
+											imp.item (i.item, j.item).is_equal (ssa.unoccupied_slot)
+										then
+											out.append (".")
+										else
+											out.append ("*")
+							j:= j+1
+						end
+
+				if i.item < 7
+				then
+				string.append_character ('%N')
+						i:=i+1
+					end
+					Result:= out
 		end
 
 feature {NONE} -- Implementation
