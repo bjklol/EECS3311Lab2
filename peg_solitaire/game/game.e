@@ -228,51 +228,14 @@ feature -- Status Queries
 			-- Has the current game been won?
 			-- i.e., there's only one occupied slot on the board.
 		do
-		-- if a position is still moveable then the game is not over
-		Result := false
-			across 1 |..| 7 as i all
-				across 1 |..| 7 as j all
-					-- Check left move
-									if ( (i >= 3 and then board.status_of(i, j) ~ board.occupied_slot)
-										and board.status_of(i-2, j) ~ board.unoccupied_slot
-										and board.status_of (i-1, j) ~ board.occupied_slot )
-									then
-										Result := FALSE
-									end
-
-									-- Check Right move
-									if ((i <= 5 and then board.status_of(i, j) ~ board.occupied_slot)
-										and (board.status_of(i+2, j) ~ board.unoccupied_slot
-										and board.status_of (i+1, j) ~ board.occupied_slot)) then
-											Result := FALSE
-										end
-
-									-- Check down move
-									if ((j <= 5 and board.status_of(i, j) ~ board.occupied_slot)
-										and (board.status_of(i, j+2) ~ board.unoccupied_slot
-										and board.status_of (i, j+1) ~ board.occupied_slot))
-										then
-											Result := FALSE
-										end
-
-									--Check up move
-									if ((j >= 3 and board.status_of(i, j) ~ board.occupied_slot)
-										and (board.status_of(i, j-2) ~ board.unoccupied_slot
-										and board.status_of (i, j-1) ~ board.occupied_slot))
-										then
-											Result := FALSE
-										end
-
-		end
-			end
-			end
+			Result := board.number_of_occupied_slots = 1
 		ensure
-			game_won_iff_one_occupied_slot_left: True
-				-- Your task.
-				-- Hint: Use 'number_of_occupied_slots' from BOARD.
+		game_won_iff_one_occupied_slot_left:
+				Result implies board.number_of_occupied_slots = 1
 			winning_a_game_means_game_over:
-			Result = (is_over = TRUE)
-		end
+		Result implies is_over
+end
+
 
 feature -- Output
 	out: STRING

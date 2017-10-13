@@ -74,18 +74,8 @@ feature -- Commands
 			-- Win a cross board.
 		require
 				current_game_is_cross:
-				game.out ~ "[
-				Game is over: No
-				Game is won : No
-				Board Status:
-				**...**
-				**.O.**
-				..OOO..
-				...O...
-				...O...
-				**...**
-				**...**]"
-		local
+				game.out ~ templates.cross_board
+			local
 			assertion: BOOLEAN
 		do
 		assertion := game.out ~ "[
@@ -185,19 +175,7 @@ feature -- Commands
 			-- Win a plus board.
 		require
 			current_game_is_plus:
-			current_game_is_plus:
-				game.out ~ "[
-				Game is over: No
-				Game is won : No
-				Board Status:
-				**...**
-				**.O.**
-				...O...
-				.OOOOO.
-				...O...
-				**.O.**
-				**...**
-	 			]"
+				game.out ~ templates.plus_board
 		local
 			assertion: BOOLEAN
 		do

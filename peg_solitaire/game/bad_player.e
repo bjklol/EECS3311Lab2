@@ -58,18 +58,7 @@ feature -- Commands
 	loses_pyramid_game
 		require
 			current_game_is_pyramid:
-				current_game_is_pyramid: game.out ~ "[
-									Game is over: No
-									Game is won : No
-									Board Status:
-									**...**
-									**.O.**
-									..OOO..
-									.OOOOO.
-									OOOOOOO
-									**...**
-									**...**
-									]"
+				game.board ~ templates.pyramid_board
 		local
 			assertion: BOOLEAN
 		do
@@ -86,7 +75,7 @@ feature -- Commands
 						**...**
 						]"
 						check assertion end
-					
+
 						game.move_right (4, 5)
 						assertion := game.out ~ "[
 						Game is over: No
@@ -226,18 +215,7 @@ feature -- Commands
 	loses_arrow_game
 		require
 			current_game_is_arrow:
-				current_game_is_arrow: game.out ~ "[
-				Game is over: No
-				Game is won : No
-				Board Status:
-				**.O.**
-				**OOO**
-				.OOOOO.
-				...O...
-				...O...
-				**OOO**
-				**OOO**
-				]"
+				game.board ~ templates.arrow_board
 		local
 			assertion: BOOLEAN
 		do
@@ -346,18 +324,7 @@ feature -- Commands
 	loses_diamond_game
 		require
 		current_game_is_diamond:
-		game.out ~ "[
-					Game is over: No
-					Game is won : No
-					Board Status:
-					**.O.**
-					**OOO**
-					.OOOOO.
-					OOO.OOO
-					.OOOOO.
-					**OOO**
-					**.O.**
-					]"
+		game.board ~ templates.diamond_board
 		local
 			assertion: BOOLEAN
 		do
@@ -533,18 +500,7 @@ feature -- Commands
 	loses_skull_game
 		require
 		current_game_is_skull:
-		 game.out ~ "[
-					Game is over: No
-					Game is won : No
-					Board Status:
-					**OOO**
-					**OOO**
-					.OOOOO.
-					.O.O.O.
-					.OOOOO.
-					**OOO**
-					**OOO**
-					]"
+		  game.board ~ templates.skull_board
 		local
 			assertion: BOOLEAN
 		do
