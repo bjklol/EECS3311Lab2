@@ -17,8 +17,8 @@ feature -- Commands
 	loses_easy_board
 			-- Lose a cross board.
 		require
-			current_game_is_easy: True
-				-- Your task.
+			current_game_is_easy:
+			current.game.board ~ templates.easy_board
 		local
 			assertion: BOOLEAN
 		do
@@ -51,8 +51,8 @@ feature -- Commands
 			]"
 			check assertion end
 		ensure
-			finished_and_lost_game:  True
-				-- Your task.
+			finished_and_lost_game:
+			game.is_over and not game.is_won
 		end
 
 	loses_pyramid_game

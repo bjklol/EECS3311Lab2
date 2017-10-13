@@ -19,7 +19,7 @@ create
 	make_cross,
 	make_plus,
 	make_pyramid,
-	make_arrow,
+	make_arr,
 	make_diamond,
 	make_skull
 
@@ -71,7 +71,7 @@ feature -- Constructors
 			board ~ bta.templates.pyramid_board
 		end
 
-	make_arrow
+	make_arr
 			-- Initialize a game with Arrow board.	
 		do
 				create board.make_arrow
@@ -101,7 +101,7 @@ feature -- Constructors
 feature -- Commands
 	move_left (r, c: INTEGER)
 		require
-		from_slot_valid_row:
+		from_slot_valid_r:
 				board.is_valid_row (r)
 			from_slot_valid_column:
 				board.is_valid_column (c)
@@ -130,7 +130,7 @@ feature -- Commands
 
 	move_right (r, c: INTEGER)
 		require
-		from_slot_valid_row:
+		from_slot_valid_r:
 				board.is_valid_row (r)
 			from_slot_valid_column:
 				board.is_valid_column (c)
@@ -160,11 +160,11 @@ feature -- Commands
 		require
 		from_slot_valid_column:
 				board.is_valid_column (c)
-			from_slot_valid_row:
+			from_slot_valid_r:
 				board.is_valid_row (r)
-			middle_slot_valid_row:
+			middle_slot_valid_r:
 				board.is_valid_row (r - 1)
-			to_slot_valid_row:
+			to_slot_valid_r:
 				board.is_valid_row (r - 2)
 			from_slot_occupied:
 				board.status_of (r,c) = board.occupied_slot
@@ -187,11 +187,11 @@ feature -- Commands
 		require
 			from_slot_valid_column:
 				board.is_valid_column (c)
-			from_slot_valid_row:
+			from_slot_valid_r:
 				board.is_valid_row (r)
-			middle_slot_valid_row:
+			middle_slot_valid_r:
 				board.is_valid_row (r - 1)
-			to_slot_valid_row:
+			to_slot_valid_r:
 				board.is_valid_row (r - 2)
 			from_slot_occupied:
 				board.status_of (r,c) = board.occupied_slot
@@ -213,17 +213,52 @@ feature -- Status Queries
 	is_over: BOOLEAN
 			-- Is the current game 'over'?
 			-- i.e., no further movements are possible.
+		local
+			a_movement_is_possible: BOOLEAN
+			r, c: INTEGER
 		do
-			-- Your task.
+			a_movement_is_possible := false
+			Result := true
+			from
+				r := 1
+			until
+				a_movement_is_possible or else
+					r > board.number_of_rows
+			loop
+				from
+					c := 1
+				until
+					a_movement_is_possible or else
+						c > board.number_of_columns
+				loop
+					if 	move_left_possible  (r, c)
+						or else move_right_possible (r, c)
+						or else move_up_possible    (r, c)
+						or else move_down_possible  (r, c)
+					then
+						a_movement_is_possible := true
+						Result := not(a_movement_is_possible)
+					end
+					c := c + 1
+				end
+				r := r + 1
+			end
 		ensure
-			correct_result: True
-				-- Your task.
-				-- Hint: write two nested across expressions to
-				-- iterate through all slots. Each slot is identified
-				-- by its row and column numbers. If there is any
-				-- slot that is movable, then the result should be true.
-		end
-
+			correct_result:
+				Result = not
+					across
+						1 |..| board.number_of_rows as r1
+					some
+						across
+							1 |..| board.number_of_columns as c1
+						some
+							   move_left_possible		(r1.item, c1.item)
+							or move_right_possible	(r1.item, c1.item)
+							or move_up_possible 		(r1.item, c1.item)
+							or move_down_possible		(r1.item, c1.item)
+						end
+					end
+end
 	is_won: BOOLEAN
 			-- Has the current game been won?
 			-- i.e., there's only one occupied slot on the board.
@@ -234,6 +269,56 @@ feature -- Status Queries
 				Result implies board.number_of_occupied_slots = 1
 			winning_a_game_means_game_over:
 		Result implies is_over
+end
+
+feature {NONE} -- Auxiliary Queries for Implementation
+	move_left_possible (r, c: INTEGER): BOOLEAN
+			-- Can the peg at r 'r' and column 'c' be moved left?
+		do
+			Result :=	 board.is_valid_row (r)
+				and then board.is_valid_column (c)
+				and then board.is_valid_column (c - 1)
+				and then board.is_valid_column (c - 2)
+				and then board.status_of (r, c    ) = board.occupied_slot
+				and then board.status_of (r, c - 1) = board.occupied_slot
+				and then board.status_of (r, c - 2) = board.unoccupied_slot
+		end
+
+	move_right_possible (r, c: INTEGER): BOOLEAN
+			-- Can the peg at r 'r' and column 'c' be moved right?
+		do
+			Result :=	 board.is_valid_row (r)
+				and then board.is_valid_column (c)
+				and then	 board.is_valid_column (c + 1)
+				and then	 board.is_valid_column (c + 2)
+				and then board.status_of (r, c    ) = board.occupied_slot
+				and then board.status_of (r, c + 1) = board.occupied_slot
+				and then board.status_of (r, c + 2) = board.unoccupied_slot
+		end
+
+	move_up_possible (r, c: INTEGER): BOOLEAN
+			-- Can the peg at r 'r' and column 'c' be moved up?
+		do
+			Result :=	 board.is_valid_column (c)
+				and then board.is_valid_row (r)
+				and then	 board.is_valid_row (r - 1)
+				and then	 board.is_valid_row (r - 2)
+				and then board.status_of (r    , c) = board.occupied_slot
+				and then board.status_of (r - 1, c) = board.occupied_slot
+				and then board.status_of (r - 2, c) = board.unoccupied_slot
+		end
+
+	move_down_possible (r, c: INTEGER): BOOLEAN
+			-- Can the peg at r 'r' and column 'c' be moved down?
+		do
+			Result :=	 board.is_valid_column (c)
+				and then board.is_valid_row (r)
+				and then board.is_valid_row (r + 1)
+				and then board.is_valid_row (r + 2)
+				and then board.status_of (r  , c) = board.occupied_slot
+				and then board.status_of (r + 1, c) = board.occupied_slot
+				and then board.status_of (r + 2, c) = board.unoccupied_slot
+
 end
 
 

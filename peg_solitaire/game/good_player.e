@@ -17,8 +17,8 @@ feature -- Commands
 	wins_easy_board
 			-- Win a cross board.
 		require
-			current_game_is_easy: True
-				-- Your task.
+			current_game_is_easy:
+			current.game.board ~ templates.easy_board
 		local
 			assertion: BOOLEAN
 		do
