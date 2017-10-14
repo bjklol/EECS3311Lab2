@@ -2,13 +2,13 @@ INCLUDE_PATH =  -I"$(ISE_LIBRARY)/library/time/spec/include"
 SHELL = /bin/sh
 CC = gcc
 CPP = g++
-CFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DEIF_IEEE_BEHAVIOR -DWORKBENCH -I"/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/include" -I. $(INCLUDE_PATH)
-CPPFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DWORKBENCH -I"/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/include" -I. $(INCLUDE_PATH)
+CFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DEIF_IEEE_BEHAVIOR -DWORKBENCH -I"/usr/include/eiffelstudio-17.05" -I. $(INCLUDE_PATH)
+CPPFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DWORKBENCH -I"/usr/include/eiffelstudio-17.05" -I. $(INCLUDE_PATH)
 LDFLAGS = -m elf_x86_64
 CCLDFLAGS = -m64  
 LDSHAREDFLAGS =  -m elf_x86_64 -shared -o
-EIFLIB = "/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/lib/libwkbench.a"
-EIFTEMPLATES = /cs/local/packages/Eiffel17.05/studio/config/linux-x86-64/templates
+EIFLIB = "/usr/lib/eiffelstudio-17.05/libwkbench.a"
+EIFTEMPLATES = /usr/share/eiffelstudio-17.05/studio/config/unix/templates
 LIBS = -lm
 MAKE = make
 AR = ar
@@ -20,7 +20,7 @@ RANLIB = :
 RM = /bin/rm -f
 FILE_EXIST = 
 RMDIR = 
-X2C = "/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/bin/x2c"
+X2C = "/usr/lib/eiffelstudio-17.05/studio/x2c"
 SHAREDLINK = ld
 SHAREDLIBS = -lm
 SHARED_SUFFIX = .so
@@ -41,13 +41,13 @@ SYSTEM_IN_DYNAMIC_LIB = peg_solitaire.so
 OBJECTS = big_file_C1_c.o 
 
 OLDOBJECTS =  ap973.o ap973d.o te977.o te977d.o te976.o te976d.o te975.o te975d.o \
-	es972.o es972d.o ba979.o ba979d.o es974.o es974d.o bo964.o bo964d.o \
-	bo965.o bo965d.o ga963.o ga963d.o go980.o go980d.o es970.o es970d.o \
-	es971.o es971d.o bo962.o bo962d.o es969.o es969d.o bo958.o bo958d.o \
-	c_961.o c_961d.o ti989.o ti989d.o ti988.o ti988d.o ti987.o ti987d.o \
-	co986.o co986d.o gr968.o gr968d.o da967.o da967d.o da966.o da966d.o \
-	sl981.o sl981d.o un985.o un985d.o sl959.o sl959d.o sl960.o sl960d.o \
-	un982.o un982d.o oc984.o oc984d.o av983.o av983d.o pl978.o pl978d.o 
+	es972.o es972d.o es974.o es974d.o bo964.o bo964d.o bo965.o bo965d.o \
+	ga963.o ga963d.o es970.o es970d.o es971.o es971d.o bo962.o bo962d.o \
+	bo961.o bo961d.o es969.o es969d.o un988.o un988d.o sl987.o sl987d.o \
+	sl959.o sl959d.o sl960.o sl960d.o av989.o av989d.o c_958.o c_958d.o \
+	ti982.o ti982d.o da983.o da983d.o da986.o da986d.o da985.o da985d.o \
+	ti981.o ti981d.o ti980.o ti980d.o da984.o da984d.o gr968.o gr968d.o \
+	ti979.o ti979d.o co978.o co978d.o da967.o da967d.o da966.o da966d.o 
 
 all: Cobj1.o
 

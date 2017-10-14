@@ -27,7 +27,7 @@ extern EIF_TYPED_VALUE F962_7146(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F962_7147(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F962_7148(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F962_7149(EIF_REFERENCE);
-extern void F962_7794(EIF_REFERENCE, int);
+extern void F962_7798(EIF_REFERENCE, int);
 extern void EIF_Minit962(void);
 
 #ifdef __cplusplus
@@ -76,58 +76,58 @@ void F962_7133 (EIF_REFERENCE Current)
 	RTDBGEAA(961, Current, 13412);
 	RTIV(Current, RTAL);
 	RTHOOK(1);
-	RTDBGAA(Current, dtype, 4966, 0xF80003BD, 0); /* default_board */
+	RTDBGAA(Current, dtype, 4966, 0xF80003C0, 0); /* default_board */
 	tr1 = RTLNSMART(RTWCT(4966, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6085, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4942, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4966, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(2);
-	RTDBGAA(Current, dtype, 4967, 0xF80003BD, 0); /* easy_board */
+	RTDBGAA(Current, dtype, 4967, 0xF80003C0, 0); /* easy_board */
 	tr1 = RTLNSMART(RTWCT(4967, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6086, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4943, Dtype(tr1)))(tr1);
 	RTNHOOK(2,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4967, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(3);
-	RTDBGAA(Current, dtype, 4968, 0xF80003BD, 0); /* cross_board */
+	RTDBGAA(Current, dtype, 4968, 0xF80003C0, 0); /* cross_board */
 	tr1 = RTLNSMART(RTWCT(4968, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6087, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4944, Dtype(tr1)))(tr1);
 	RTNHOOK(3,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4968, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(4);
-	RTDBGAA(Current, dtype, 4969, 0xF80003BD, 0); /* plus_board */
+	RTDBGAA(Current, dtype, 4969, 0xF80003C0, 0); /* plus_board */
 	tr1 = RTLNSMART(RTWCT(4969, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6088, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4945, Dtype(tr1)))(tr1);
 	RTNHOOK(4,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4969, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(5);
-	RTDBGAA(Current, dtype, 4970, 0xF80003BD, 0); /* pyramid_board */
+	RTDBGAA(Current, dtype, 4970, 0xF80003C0, 0); /* pyramid_board */
 	tr1 = RTLNSMART(RTWCT(4970, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6089, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4946, Dtype(tr1)))(tr1);
 	RTNHOOK(5,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4970, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(6);
-	RTDBGAA(Current, dtype, 4971, 0xF80003BD, 0); /* arrow_board */
+	RTDBGAA(Current, dtype, 4971, 0xF80003C0, 0); /* arrow_board */
 	tr1 = RTLNSMART(RTWCT(4971, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6090, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4947, Dtype(tr1)))(tr1);
 	RTNHOOK(6,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4971, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(7);
-	RTDBGAA(Current, dtype, 4972, 0xF80003BD, 0); /* diamond_board */
+	RTDBGAA(Current, dtype, 4972, 0xF80003C0, 0); /* diamond_board */
 	tr1 = RTLNSMART(RTWCT(4972, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6091, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4948, Dtype(tr1)))(tr1);
 	RTNHOOK(7,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4972, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
 	RTHOOK(8);
-	RTDBGAA(Current, dtype, 4973, 0xF80003BD, 0); /* skull_board */
+	RTDBGAA(Current, dtype, 4973, 0xF80003C0, 0); /* skull_board */
 	tr1 = RTLNSMART(RTWCT(4973, dtype, Dftype(Current)).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(6092, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(4949, Dtype(tr1)))(tr1);
 	RTNHOOK(8,1);
 	RTAR(Current, tr1);
 	*(EIF_REFERENCE *)(Current + RTWA(4973, dtype)) = (EIF_REFERENCE) RTCCL(tr1);
@@ -342,7 +342,7 @@ EIF_TYPED_VALUE F962_7149 (EIF_REFERENCE Current)
 
 
 /* {BOARD_TEMPLATES}._invariant */
-void F962_7794 (EIF_REFERENCE Current, int where)
+void F962_7798 (EIF_REFERENCE Current, int where)
 {
 	GTCX
 	char *l_feature_name = "_invariant";
@@ -364,7 +364,7 @@ void F962_7794 (EIF_REFERENCE Current, int where)
 	RTLIU(3);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
-	RTEAINV(l_feature_name, 961, Current, 0, 7793);
+	RTEAINV(l_feature_name, 961, Current, 0, 7797);
 	RTSA(dtype);
 	RTME(dtype, 0);
 	RTIT("correct_default_board_output", Current);

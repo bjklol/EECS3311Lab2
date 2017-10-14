@@ -19,7 +19,7 @@ create
 	make_cross,
 	make_plus,
 	make_pyramid,
-	make_arr,
+	make_arrow,
 	make_diamond,
 	make_skull
 
@@ -71,7 +71,7 @@ feature -- Constructors
 			board ~ bta.templates.pyramid_board
 		end
 
-	make_arr
+	make_arrow
 			-- Initialize a game with Arrow board.	
 		do
 				create board.make_arrow
@@ -101,7 +101,7 @@ feature -- Constructors
 feature -- Commands
 	move_left (r, c: INTEGER)
 		require
-		from_slot_valid_r:
+		from_slot_valid_row:
 				board.is_valid_row (r)
 			from_slot_valid_column:
 				board.is_valid_column (c)
@@ -116,6 +116,7 @@ feature -- Commands
 			to_slot_unoccupied:
 				board.status_of (r,c - 2) = board.unoccupied_slot
 		do
+			board.set_status (r, c, board.unoccupied_slot)
 		board.set_status (r,c - 2,board.occupied_slot)
 		board.set_statuses (r, r, c - 1, c, board.unoccupied_slot)
 		ensure
@@ -130,7 +131,7 @@ feature -- Commands
 
 	move_right (r, c: INTEGER)
 		require
-		from_slot_valid_r:
+		from_slot_valid_row:
 				board.is_valid_row (r)
 			from_slot_valid_column:
 				board.is_valid_column (c)
@@ -145,6 +146,7 @@ feature -- Commands
 			to_slot_unoccupied:
 				board.status_of (r,c + 2) = board.unoccupied_slot
 		do
+			board.set_status (r, c, board.unoccupied_slot)
 			board.set_status (r,c + 2,board.occupied_slot)
 			board.set_statuses (r, r, c, c + 1, board.unoccupied_slot)
 		ensure
@@ -160,11 +162,11 @@ feature -- Commands
 		require
 		from_slot_valid_column:
 				board.is_valid_column (c)
-			from_slot_valid_r:
+			from_slot_valid_row:
 				board.is_valid_row (r)
-			middle_slot_valid_r:
+			middle_slot_valid_row:
 				board.is_valid_row (r - 1)
-			to_slot_valid_r:
+			to_slot_valid_row:
 				board.is_valid_row (r - 2)
 			from_slot_occupied:
 				board.status_of (r,c) = board.occupied_slot
@@ -173,6 +175,7 @@ feature -- Commands
 			to_slot_unoccupied:
 				board.status_of (r - 2,c) = board.unoccupied_slot
 		do
+			board.set_status (r, c, board.unoccupied_slot)
 			board.set_status (r - 2,c,board.occupied_slot)
 			board.set_statuses (r - 1, r, c, c, board.unoccupied_slot)
 		ensure
@@ -187,19 +190,20 @@ feature -- Commands
 		require
 			from_slot_valid_column:
 				board.is_valid_column (c)
-			from_slot_valid_r:
-				board.is_valid_row (r)
-			middle_slot_valid_r:
-				board.is_valid_row (r - 1)
-			to_slot_valid_r:
-				board.is_valid_row (r - 2)
+			from_slot_valid_row:
+				r <= 5 and r >= 1
+			middle_slot_valid_row:
+			r +1 >= 2 and r+1 <= 6
+			to_slot_valid_row:
+				r +2 >= 1 and r +2  <= 7
 			from_slot_occupied:
 				board.status_of (r,c) = board.occupied_slot
 			middle_slot_occupied:
-				board.status_of (r - 1,c) = board.occupied_slot
+				board.status_of (r +1 ,c) = board.occupied_slot
 			to_slot_unoccupied:
-				board.status_of (r - 2,c) = board.unoccupied_slot
+				board.status_of (r + 2,c) = board.unoccupied_slot
 		do
+			board.set_status (r, c, board.unoccupied_slot)
 			board.set_status (r+2,c,board.occupied_slot)
 			board.set_statuses (r, r+1, c, c, board.unoccupied_slot)
 		ensure
@@ -273,7 +277,7 @@ end
 
 feature {NONE} -- Auxiliary Queries for Implementation
 	move_left_possible (r, c: INTEGER): BOOLEAN
-			-- Can the peg at r 'r' and column 'c' be moved left?
+			-- Can the peg at row 'r' and column 'c' be moved left?
 		do
 			Result :=	 board.is_valid_row (r)
 				and then board.is_valid_column (c)
@@ -285,7 +289,7 @@ feature {NONE} -- Auxiliary Queries for Implementation
 		end
 
 	move_right_possible (r, c: INTEGER): BOOLEAN
-			-- Can the peg at r 'r' and column 'c' be moved right?
+			-- Can the peg at row 'r' and column 'c' be moved right?
 		do
 			Result :=	 board.is_valid_row (r)
 				and then board.is_valid_column (c)
@@ -297,7 +301,7 @@ feature {NONE} -- Auxiliary Queries for Implementation
 		end
 
 	move_up_possible (r, c: INTEGER): BOOLEAN
-			-- Can the peg at r 'r' and column 'c' be moved up?
+			-- Can the peg at row 'r' and column 'c' be moved up?
 		do
 			Result :=	 board.is_valid_column (c)
 				and then board.is_valid_row (r)
@@ -309,7 +313,7 @@ feature {NONE} -- Auxiliary Queries for Implementation
 		end
 
 	move_down_possible (r, c: INTEGER): BOOLEAN
-			-- Can the peg at r 'r' and column 'c' be moved down?
+			-- Can the peg at row 'r' and column 'c' be moved down?
 		do
 			Result :=	 board.is_valid_column (c)
 				and then board.is_valid_row (r)
