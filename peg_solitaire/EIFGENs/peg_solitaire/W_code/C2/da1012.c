@@ -96,7 +96,7 @@ void F1012_7732 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	RTGC;
 	RTDBGEAA(1011, Current, 14069);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,443,0xFF01,1002,217,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,366,0xFF01,1002,217,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -115,7 +115,7 @@ label_1:
 	}
 body:;
 	RTHOOK(2);
-	RTDBGAA(Current, dtype, 5489, 0xF80001BB, 0); /* code */
+	RTDBGAA(Current, dtype, 5489, 0xF800016E, 0); /* code */
 	RTAR(Current, arg1);
 	*(EIF_REFERENCE *)(Current + RTWA(5489, dtype)) = (EIF_REFERENCE) RTCCL(arg1);
 	if (RTAL & CK_ENSURE) {
@@ -1011,7 +1011,7 @@ void F1012_7748 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	RTGC;
 	RTDBGEAA(1011, Current, 14053);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,299,0xFF01,231,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,247,0xFF01,231,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -1030,7 +1030,7 @@ label_1:
 	}
 body:;
 	RTHOOK(2);
-	RTDBGAA(Current, dtype, 5491, 0xF800012B, 0); /* days */
+	RTDBGAA(Current, dtype, 5491, 0xF80000F7, 0); /* days */
 	RTAR(Current, arg1);
 	*(EIF_REFERENCE *)(Current + RTWA(5491, dtype)) = (EIF_REFERENCE) RTCCL(arg1);
 	if (RTAL & CK_ENSURE) {
@@ -1087,7 +1087,7 @@ void F1012_7749 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	RTGC;
 	RTDBGEAA(1011, Current, 14054);
 	{
-		static EIF_TYPE_INDEX typarr0[] = {0xFF01,299,0xFF01,231,0xFFFF};
+		static EIF_TYPE_INDEX typarr0[] = {0xFF01,247,0xFF01,231,0xFFFF};
 		EIF_TYPE typres0;
 		static EIF_TYPE typcache0 = {INVALID_DTYPE, 0};
 		
@@ -1106,7 +1106,7 @@ label_1:
 	}
 body:;
 	RTHOOK(2);
-	RTDBGAA(Current, dtype, 5490, 0xF800012B, 0); /* months */
+	RTDBGAA(Current, dtype, 5490, 0xF80000F7, 0); /* months */
 	RTAR(Current, arg1);
 	*(EIF_REFERENCE *)(Current + RTWA(5490, dtype)) = (EIF_REFERENCE) RTCCL(arg1);
 	if (RTAL & CK_ENSURE) {

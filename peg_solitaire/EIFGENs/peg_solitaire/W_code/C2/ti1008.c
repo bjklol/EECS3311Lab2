@@ -1043,7 +1043,7 @@ body:;
 		tb1 = '\01';
 		if (Result) {
 			ur1 = RTCCL(Current);
-			tb2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(1315, "is_less", arg1))(arg1, ur1x)).it_b);
+			tb2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(1342, "is_less", arg1))(arg1, ur1x)).it_b);
 			tb1 = (EIF_BOOLEAN) !tb2;
 		}
 		if (tb1) {
@@ -1579,9 +1579,9 @@ void F1008_7668 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	}
 	if (tb1) {
 		RTHOOK(3);
-		tr1 = RTLN(eif_new_type(202, 0x00).id);
+		tr1 = RTLN(eif_new_type(205, 0x00).id);
 		*(EIF_REAL_64 *)tr1 = loc1;
-		ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4153, "floor", tr1))(tr1)).it_i4);
+		ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4180, "floor", tr1))(tr1)).it_i4);
 		ui4_1 = ti4_1;
 		ti4_2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5139, dtype))(Current)).it_i4);
 		ui4_2 = ti4_2;
@@ -1591,9 +1591,9 @@ void F1008_7668 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 		ur8_1 = (EIF_REAL_64) (loc1 - tr8_1);
 		(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTWF(5150, dtype))(Current, ur8_1x);
 		RTHOOK(4);
-		tr1 = RTLN(eif_new_type(202, 0x00).id);
+		tr1 = RTLN(eif_new_type(205, 0x00).id);
 		*(EIF_REAL_64 *)tr1 = loc1;
-		ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4153, "floor", tr1))(tr1)).it_i4);
+		ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4180, "floor", tr1))(tr1)).it_i4);
 		ui4_1 = ti4_1;
 		ti4_2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5139, dtype))(Current)).it_i4);
 		ui4_2 = ti4_2;

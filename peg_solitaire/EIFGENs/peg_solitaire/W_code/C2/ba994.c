@@ -555,7 +555,7 @@ body:;
 	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5202, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	RTNHOOK(5,1);
 	tr2 = ((up2x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(28, "out", tr1))(tr1)), (((up2x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up2x.it_r = RTBU(up2x))), (up2x.type = SK_POINTER), up2x.it_r);
-	tr1 = RTMS_EX_H("Game is over: No\012Game is won : No\012Board Status:\012**.O.**\012**OO.**\012.OOO.O.\012...OO..\012...O...\012**OOO**\012**OOO**",103,1197217578);
+	tr1 = RTMS_EX_H("Game is over: No\012Game is won : No\012Board Status:\012**.O.**\012**.OO**\012.O.OOO.\012..OO...\012...O...\012**OOO**\012**OOO**",103,1838906154);
 	loc1 = (EIF_BOOLEAN) RTEQ(tr2, tr1);
 	if (RTAL & CK_CHECK) {
 		RTHOOK(6);
@@ -570,7 +570,7 @@ body:;
 	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5202, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	RTNHOOK(7,1);
 	ui4_1 = ((EIF_INTEGER_32) 2L);
-	ui4_2 = ((EIF_INTEGER_32) 1L);
+	ui4_2 = ((EIF_INTEGER_32) 5L);
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTVF(4993, "move_down", tr1))(tr1, ui4_1x, ui4_2x);
 	RTHOOK(8);
 	RTDBGAL(Current, 1, 0x04000000, 1, 0); /* loc1 */

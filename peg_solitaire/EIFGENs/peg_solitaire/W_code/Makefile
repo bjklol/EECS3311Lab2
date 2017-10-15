@@ -2,13 +2,13 @@ INCLUDE_PATH =  -I"$(ISE_LIBRARY)/library/time/spec/include"
 SHELL = /bin/sh
 CC = gcc
 CPP = g++
-CFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DEIF_IEEE_BEHAVIOR -DWORKBENCH -I"/usr/include/eiffelstudio-17.05" -I. $(INCLUDE_PATH)
-CPPFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DWORKBENCH -I"/usr/include/eiffelstudio-17.05" -I. $(INCLUDE_PATH)
+CFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DEIF_IEEE_BEHAVIOR -DWORKBENCH -I"/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/include" -I. $(INCLUDE_PATH)
+CPPFLAGS = -O0 -pipe -fPIC -D_GNU_SOURCE -m64  -DWORKBENCH -I"/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/include" -I. $(INCLUDE_PATH)
 LDFLAGS = -m elf_x86_64
 CCLDFLAGS = -m64  
 LDSHAREDFLAGS =  -m elf_x86_64 -shared -o
-EIFLIB = "/usr/lib/eiffelstudio-17.05/libwkbench.a"
-EIFTEMPLATES = /usr/share/eiffelstudio-17.05/studio/config/unix/templates
+EIFLIB = "/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/lib/libwkbench.a"
+EIFTEMPLATES = /cs/local/packages/Eiffel17.05/studio/config/linux-x86-64/templates
 LIBS = -lm
 MAKE = make
 AR = ar
@@ -20,7 +20,7 @@ RANLIB = :
 RM = /bin/rm -f
 FILE_EXIST = 
 RMDIR = 
-X2C = "/usr/lib/eiffelstudio-17.05/studio/x2c"
+X2C = "/cs/local/packages/Eiffel17.05/studio/spec/linux-x86-64/bin/x2c"
 SHAREDLINK = ld
 SHAREDLIBS = -lm
 SHARED_SUFFIX = .so
@@ -92,7 +92,7 @@ E1/eparents.o: Makefile E1/Makefile E1/estructure.h
 
 OBJECTS= C2/Cobj2.o C1/Cobj1.o  E1/eoption.o E1/epattern.o E1/efrozen.o E1/ecall.o E1/eplug.o E1/eskelet.o E1/enames.o E1/evisib.o E1/ececil.o E1/einit.o E1/eparents.o
 
-PRECOMP_OBJECTS= "/home/ty/.es/eiffel_user_files/17.05/precomp/spec/unix/EIFGENs/base-safe/W_code/preobj.o"
+PRECOMP_OBJECTS= "/cs/local/packages/Eiffel17.05/precomp/spec/linux-x86-64/EIFGENs/base-safe/W_code/preobj.o"
 
 
 peg_solitaire: $(OBJECTS)  E1/emain.o Makefile

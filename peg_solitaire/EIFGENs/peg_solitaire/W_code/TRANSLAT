@@ -200,8 +200,8 @@ tests	TEST_PEG_SOLITAIRE	bta	F976_7288	C1/te976.c
 tests	TEST_PEG_SOLITAIRE	test_easy_game_creation	F976_7289	C1/te976.c
 tests	TEST_BAD_PLAYER	make	F977_7290	C1/te977.c
 tests	TEST_BAD_PLAYER	test_bad_player_loses_easy_board	F977_7291	C1/te977.c
-tests	TEST_BAD_PLAYER	test_out_feature	F977_7292	C1/te977.c
-tests	TEST_BAD_PLAYER	test_number_of_occupied_slots	F977_7293	C1/te977.c
+tests	TEST_BAD_PLAYER	test_number_of_occupied_slots	F977_7292	C1/te977.c
+tests	TEST_BAD_PLAYER	test_out_feature	F977_7293	C1/te977.c
 time	CODE_VALIDITY_CHECKER	is_code	F978_7294	C1/co978.c
 time	CODE_VALIDITY_CHECKER	is_day	F978_7295	C1/co978.c
 time	CODE_VALIDITY_CHECKER	is_day0	F978_7296	C1/co978.c
@@ -318,36 +318,36 @@ espec	ES_BOOLEAN_TEST_CASE	make	F997_7427	C2/es997.c
 espec	ES_BOOLEAN_TEST_CASE	run	F997_7428	C2/es997.c
 espec	ES_BOOLEAN_TEST_CASE	is_violation_case	F997_7429	C2/es997.c
 espec	ES_BOOLEAN_TEST_CASE	case	F997_7430	C2/es997.c
-time	INTERVAL [G#1]	make	F1014_7431	C2/in1014.c
-time	INTERVAL [G#1]	start_bound	F1014_7432	C2/in1014.c
-time	INTERVAL [G#1]	end_bound	F1014_7433	C2/in1014.c
-time	INTERVAL [G#1]	duration	F1014_7434	C2/in1014.c
-time	INTERVAL [G#1]	is_equal	F1014_7435	C2/in1014.c
-time	INTERVAL [G#1]	intersects	F1014_7436	C2/in1014.c
-time	INTERVAL [G#1]	is_less	F1014_7437	C2/in1014.c
-time	INTERVAL [G#1]	is_less_equal	F1014_7438	C2/in1014.c
-time	INTERVAL [G#1]	is_greater	F1014_7439	C2/in1014.c
-time	INTERVAL [G#1]	is_greater_equal	F1014_7440	C2/in1014.c
-time	INTERVAL [G#1]	is_strict_included_by	F1014_7441	C2/in1014.c
-time	INTERVAL [G#1]	strict_includes	F1014_7442	C2/in1014.c
-time	INTERVAL [G#1]	is_included_by	F1014_7443	C2/in1014.c
-time	INTERVAL [G#1]	includes	F1014_7444	C2/in1014.c
-time	INTERVAL [G#1]	overlaps	F1014_7445	C2/in1014.c
-time	INTERVAL [G#1]	is_overlapped_by	F1014_7446	C2/in1014.c
-time	INTERVAL [G#1]	meets	F1014_7447	C2/in1014.c
-time	INTERVAL [G#1]	is_met_by	F1014_7448	C2/in1014.c
-time	INTERVAL [G#1]	empty	F1014_7449	C2/in1014.c
-time	INTERVAL [G#1]	has	F1014_7450	C2/in1014.c
-time	INTERVAL [G#1]	strict_before	F1014_7451	C2/in1014.c
-time	INTERVAL [G#1]	strict_after	F1014_7452	C2/in1014.c
-time	INTERVAL [G#1]	before	F1014_7453	C2/in1014.c
-time	INTERVAL [G#1]	after	F1014_7454	C2/in1014.c
-time	INTERVAL [G#1]	set_start_bound	F1014_7455	C2/in1014.c
-time	INTERVAL [G#1]	set_end_bound	F1014_7456	C2/in1014.c
-time	INTERVAL [G#1]	union	F1014_7457	C2/in1014.c
-time	INTERVAL [G#1]	intersection	F1014_7458	C2/in1014.c
-time	INTERVAL [G#1]	gather	F1014_7459	C2/in1014.c
-time	INTERVAL [G#1]	out	F1014_7460	C2/in1014.c
+time	INTERVAL [G#1]	make	F1015_7431	C2/in1015.c
+time	INTERVAL [G#1]	start_bound	F1015_7432	C2/in1015.c
+time	INTERVAL [G#1]	end_bound	F1015_7433	C2/in1015.c
+time	INTERVAL [G#1]	duration	F1015_7434	C2/in1015.c
+time	INTERVAL [G#1]	is_equal	F1015_7435	C2/in1015.c
+time	INTERVAL [G#1]	intersects	F1015_7436	C2/in1015.c
+time	INTERVAL [G#1]	is_less	F1015_7437	C2/in1015.c
+time	INTERVAL [G#1]	is_less_equal	F1015_7438	C2/in1015.c
+time	INTERVAL [G#1]	is_greater	F1015_7439	C2/in1015.c
+time	INTERVAL [G#1]	is_greater_equal	F1015_7440	C2/in1015.c
+time	INTERVAL [G#1]	is_strict_included_by	F1015_7441	C2/in1015.c
+time	INTERVAL [G#1]	strict_includes	F1015_7442	C2/in1015.c
+time	INTERVAL [G#1]	is_included_by	F1015_7443	C2/in1015.c
+time	INTERVAL [G#1]	includes	F1015_7444	C2/in1015.c
+time	INTERVAL [G#1]	overlaps	F1015_7445	C2/in1015.c
+time	INTERVAL [G#1]	is_overlapped_by	F1015_7446	C2/in1015.c
+time	INTERVAL [G#1]	meets	F1015_7447	C2/in1015.c
+time	INTERVAL [G#1]	is_met_by	F1015_7448	C2/in1015.c
+time	INTERVAL [G#1]	empty	F1015_7449	C2/in1015.c
+time	INTERVAL [G#1]	has	F1015_7450	C2/in1015.c
+time	INTERVAL [G#1]	strict_before	F1015_7451	C2/in1015.c
+time	INTERVAL [G#1]	strict_after	F1015_7452	C2/in1015.c
+time	INTERVAL [G#1]	before	F1015_7453	C2/in1015.c
+time	INTERVAL [G#1]	after	F1015_7454	C2/in1015.c
+time	INTERVAL [G#1]	set_start_bound	F1015_7455	C2/in1015.c
+time	INTERVAL [G#1]	set_end_bound	F1015_7456	C2/in1015.c
+time	INTERVAL [G#1]	union	F1015_7457	C2/in1015.c
+time	INTERVAL [G#1]	intersection	F1015_7458	C2/in1015.c
+time	INTERVAL [G#1]	gather	F1015_7459	C2/in1015.c
+time	INTERVAL [G#1]	out	F1015_7460	C2/in1015.c
 time	DURATION	is_negative	F998_7470	C2/du998.c
 time	DURATION	is_zero	F998_7471	C2/du998.c
 time	DURATION	identity	F998_7472	C2/du998.c
@@ -437,17 +437,17 @@ time	DATE_DURATION	to_definite	F1001_7555	C2/da1001.c
 time	DATE_DURATION	to_date_time	F1001_7556	C2/da1001.c
 time	ABSOLUTE	is_less	F1002_7559	C2/ab1002.c
 time	ABSOLUTE	minus	F1002_7560	C2/ab1002.c
-elks	ARRAY2 [G#1]	make	F1017_3833	C2/ar1017.c
-elks	ARRAY2 [G#1]	make_filled	F1017_3834	C2/ar1017.c
-elks	ARRAY2 [G#1]	initialize	F1017_3835	C2/ar1017.c
-elks	ARRAY2 [G#1]	item	F1017_3836	C2/ar1017.c
-elks	ARRAY2 [G#1]	height	F1017_3837	C2/ar1017.c
-elks	ARRAY2 [G#1]	width	F1017_3838	C2/ar1017.c
-elks	ARRAY2 [G#1]	put	F1017_3839	C2/ar1017.c
-elks	ARRAY2 [G#1]	force	F1017_3840	C2/ar1017.c
-elks	ARRAY2 [G#1]	wipe_out	F1017_3841	C2/ar1017.c
-elks	ARRAY2 [G#1]	resize	F1017_3842	C2/ar1017.c
-elks	ARRAY2 [G#1]	resize_with_default	F1017_3843	C2/ar1017.c
+elks	ARRAY2 [G#1]	make	F1014_3833	C2/ar1014.c
+elks	ARRAY2 [G#1]	make_filled	F1014_3834	C2/ar1014.c
+elks	ARRAY2 [G#1]	initialize	F1014_3835	C2/ar1014.c
+elks	ARRAY2 [G#1]	item	F1014_3836	C2/ar1014.c
+elks	ARRAY2 [G#1]	height	F1014_3837	C2/ar1014.c
+elks	ARRAY2 [G#1]	width	F1014_3838	C2/ar1014.c
+elks	ARRAY2 [G#1]	put	F1014_3839	C2/ar1014.c
+elks	ARRAY2 [G#1]	force	F1014_3840	C2/ar1014.c
+elks	ARRAY2 [G#1]	wipe_out	F1014_3841	C2/ar1014.c
+elks	ARRAY2 [G#1]	resize	F1014_3842	C2/ar1014.c
+elks	ARRAY2 [G#1]	resize_with_default	F1014_3843	C2/ar1014.c
 time	DATE_TIME_CODE	make	F1003_7562	C2/da1003.c
 time	DATE_TIME_CODE	is_separator_code	F1003_7563	C2/da1003.c
 time	DATE_TIME_CODE	is_text	F1003_7564	C2/da1003.c
@@ -505,38 +505,6 @@ time	DATE_VALUE	month_shift	F1004_7615	C2/da1004.c
 time	DATE_VALUE	day_shift	F1004_7616	C2/da1004.c
 time	DATE_VALUE	compact_date_attribute_name	F1004_7617	C2/da1004.c
 time	DATE_VALUE	set_private_internal_compact_date	F1004_7618	C2/da1004.c
-elks	TYPE [SLOT_STATUS_ACCESS]	name_32	F1015_5170	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	name	F1015_5171	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	generic_parameter_type	F1015_5172	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	type_id	F1015_5173	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	hash_code	F1015_5174	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	generic_parameter_count	F1015_5175	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	has_default	F1015_5176	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_deferred	F1015_5177	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_expanded	F1015_5178	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_attached	F1015_5179	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_equal	F1015_5180	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_strictly_conforming_to	F1015_5181	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_conforming_to	F1015_5182	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	adapt	F1015_5183	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	attempted	F1015_5184	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	attempt	F1015_5185	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	default_detachable_value	F1015_5186	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	default	F1015_5187	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	out	F1015_5188	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	debug_output	F1015_5189	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	plus	F1015_5190	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	same_string	F1015_5191	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	is_case_insensitive_equal	F1015_5192	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	as_lower	F1015_5193	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	as_upper	F1015_5194	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	to_string_8	F1015_5195	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	to_string_32	F1015_5196	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	internal_name_32	F1015_5197	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	internal_name_32	F1015_5197	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	internal_name	F1015_5198	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	internal_name	F1015_5198	C2/ty1015.c
-elks	TYPE [SLOT_STATUS_ACCESS]	runtime_name	F1015_5199	C2/ty1015.c
 elks	TYPE [BOARD_TEMPLATES_ACCESS]	name_32	F1016_5170	C2/ty1016.c
 elks	TYPE [BOARD_TEMPLATES_ACCESS]	name	F1016_5171	C2/ty1016.c
 elks	TYPE [BOARD_TEMPLATES_ACCESS]	generic_parameter_type	F1016_5172	C2/ty1016.c
@@ -569,6 +537,38 @@ elks	TYPE [BOARD_TEMPLATES_ACCESS]	internal_name_32	F1016_5197	C2/ty1016.c
 elks	TYPE [BOARD_TEMPLATES_ACCESS]	internal_name	F1016_5198	C2/ty1016.c
 elks	TYPE [BOARD_TEMPLATES_ACCESS]	internal_name	F1016_5198	C2/ty1016.c
 elks	TYPE [BOARD_TEMPLATES_ACCESS]	runtime_name	F1016_5199	C2/ty1016.c
+elks	TYPE [SLOT_STATUS_ACCESS]	name_32	F1017_5170	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	name	F1017_5171	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	generic_parameter_type	F1017_5172	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	type_id	F1017_5173	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	hash_code	F1017_5174	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	generic_parameter_count	F1017_5175	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	has_default	F1017_5176	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_deferred	F1017_5177	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_expanded	F1017_5178	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_attached	F1017_5179	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_equal	F1017_5180	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_strictly_conforming_to	F1017_5181	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_conforming_to	F1017_5182	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	adapt	F1017_5183	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	attempted	F1017_5184	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	attempt	F1017_5185	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	default_detachable_value	F1017_5186	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	default	F1017_5187	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	out	F1017_5188	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	debug_output	F1017_5189	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	plus	F1017_5190	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	same_string	F1017_5191	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	is_case_insensitive_equal	F1017_5192	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	as_lower	F1017_5193	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	as_upper	F1017_5194	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	to_string_8	F1017_5195	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	to_string_32	F1017_5196	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	internal_name_32	F1017_5197	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	internal_name_32	F1017_5197	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	internal_name	F1017_5198	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	internal_name	F1017_5198	C2/ty1017.c
+elks	TYPE [SLOT_STATUS_ACCESS]	runtime_name	F1017_5199	C2/ty1017.c
 time	FIND_SEPARATOR_FACILITY	separator_characters	F1005_7619	C2/fi1005.c
 time	FIND_SEPARATOR_FACILITY	find_separator	F1005_7620	C2/fi1005.c
 time	FIND_SEPARATOR_FACILITY	extracted_substrings	F1005_7621	C2/fi1005.c

@@ -21,62 +21,62 @@ void _A143_159_2 (void(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALU
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) F143_7027)(closed [1].it_r, open [1]);
 }
 
+	/* HASH_TABLE [INTEGER_32, INTEGER_32] has */
+EIF_TYPED_VALUE _A307_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
+}
+
 	/* HASH_TABLE [G#1, G#2] has */
-EIF_TYPED_VALUE _A293_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A360_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
 	/* HASH_TABLE [G#1, INTEGER_32] has */
-EIF_TYPED_VALUE _A444_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A367_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
 	/* HASH_TABLE [NATURAL_32, POINTER] has */
-EIF_TYPED_VALUE _A473_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
-{
-	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
-}
-
-	/* HASH_TABLE [INTEGER_32, INTEGER_32] has */
-EIF_TYPED_VALUE _A909_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A612_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
 	/* HASH_TABLE [INTEGER_32, G#2] has */
-EIF_TYPED_VALUE _A929_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+EIF_TYPED_VALUE _A955_48_2 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE, EIF_TYPED_VALUE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(3015, "has", closed [1].it_r))(closed [1].it_r, open [1]);
 }
 
 	/* MISMATCH_INFORMATION wipe_out */
-void A167_95 (EIF_REFERENCE Current)
+void A166_95 (EIF_REFERENCE Current)
 {
 	GTCX
 	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTVF(1715, "wipe_out", Current))(Current);
 }
 
 	/* MISMATCH_INFORMATION internal_put */
-void A167_159 (EIF_REFERENCE Current, EIF_REFERENCE arg1, EIF_POINTER arg2)
+void A166_159 (EIF_REFERENCE Current, EIF_REFERENCE arg1, EIF_POINTER arg2)
 {
 	EIF_TYPED_VALUE u [2];
 	GTCX
-	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTVF(3115, "internal_put", Current))(Current, ((u [0].type = SK_REF), (u [0].it_r = arg1), u [0]), ((u [1].type = SK_POINTER), (u [1].it_p = arg2), u [1]));
+	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTVF(3109, "internal_put", Current))(Current, ((u [0].type = SK_REF), (u [0].it_r = arg1), u [0]), ((u [1].type = SK_POINTER), (u [1].it_p = arg2), u [1]));
 }
 
 	/* MISMATCH_INFORMATION set_string_versions */
-void A167_160 (EIF_REFERENCE Current, EIF_POINTER arg1, EIF_POINTER arg2)
+void A166_160 (EIF_REFERENCE Current, EIF_POINTER arg1, EIF_POINTER arg2)
 {
 	EIF_TYPED_VALUE u [2];
 	GTCX
-	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTVF(3116, "set_string_versions", Current))(Current, ((u [0].type = SK_POINTER), (u [0].it_p = arg1), u [0]), ((u [1].type = SK_POINTER), (u [1].it_p = arg2), u [1]));
+	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTVF(3110, "set_string_versions", Current))(Current, ((u [0].type = SK_POINTER), (u [0].it_p = arg1), u [0]), ((u [1].type = SK_POINTER), (u [1].it_p = arg2), u [1]));
 }
 
 	/* TEST_GOOD_PLAYER test_good_player_wins_easy_board */
@@ -101,19 +101,26 @@ EIF_TYPED_VALUE _A977_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VA
 }
 
 	/* TEST_BAD_PLAYER test_out_feature */
+EIF_TYPED_VALUE _A977_79 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5108, "test_out_feature", closed [1].it_r))(closed [1].it_r);
+}
+
+	/* TEST_BAD_PLAYER test_number_of_occupied_slots */
 EIF_TYPED_VALUE _A977_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
 {
 	GTCX
-	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5107, "test_out_feature", closed [1].it_r))(closed [1].it_r);
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5107, "test_number_of_occupied_slots", closed [1].it_r))(closed [1].it_r);
 }
 
 
 static fnptr feif_address_table[] = {
 (fnptr)0,
 (fnptr)A32_36,
-(fnptr)A167_95,
-(fnptr)A167_159,
-(fnptr)A167_160,
+(fnptr)A166_95,
+(fnptr)A166_159,
+(fnptr)A166_160,
 };
 
 fnptr *egc_address_table_init = feif_address_table;

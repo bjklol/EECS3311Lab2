@@ -1998,9 +1998,9 @@ EIF_TYPED_VALUE F1000_7527 (EIF_REFERENCE Current)
 	RTDBGAL(Current, 0, 0x10000000, 1,0); /* Result */
 	tr8_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5277, dtype))(Current)).it_r8);
 	RTNHOOK(1,1);
-	tr1 = RTLN(eif_new_type(202, 0x00).id);
+	tr1 = RTLN(eif_new_type(205, 0x00).id);
 	*(EIF_REAL_64 *)tr1 = tr8_1;
-	ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4153, "floor", tr1))(tr1)).it_i4);
+	ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4180, "floor", tr1))(tr1)).it_i4);
 	ui4_1 = ti4_1;
 	ti4_2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5141, dtype))(Current)).it_i4);
 	ui4_2 = ti4_2;
@@ -2070,9 +2070,9 @@ EIF_TYPED_VALUE F1000_7528 (EIF_REFERENCE Current)
 	tr1 = RTLNSMART(Dftype(Current));
 	tr8_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5277, dtype))(Current)).it_r8);
 	RTNHOOK(1,1);
-	tr2 = RTLN(eif_new_type(202, 0x00).id);
+	tr2 = RTLN(eif_new_type(205, 0x00).id);
 	*(EIF_REAL_64 *)tr2 = tr8_1;
-	ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4153, "floor", tr2))(tr2)).it_i4);
+	ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4180, "floor", tr2))(tr2)).it_i4);
 	ui4_1 = ti4_1;
 	ti4_2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5141, dtype))(Current)).it_i4);
 	ui4_2 = ti4_2;
@@ -2085,9 +2085,9 @@ EIF_TYPED_VALUE F1000_7528 (EIF_REFERENCE Current)
 	tr8_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5277, dtype))(Current)).it_r8);
 	tr8_2 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5277, dtype))(Current)).it_r8);
 	RTNHOOK(2,1);
-	tr1 = RTLN(eif_new_type(202, 0x00).id);
+	tr1 = RTLN(eif_new_type(205, 0x00).id);
 	*(EIF_REAL_64 *)tr1 = tr8_2;
-	ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4153, "floor", tr1))(tr1)).it_i4);
+	ti4_1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(4180, "floor", tr1))(tr1)).it_i4);
 	tr8_2 = (EIF_REAL_64) (ti4_1);
 	ur8_1 = (EIF_REAL_64) (tr8_1 - tr8_2);
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(5282, "fine_second_add", Result))(Result, ur8_1x);
@@ -2105,7 +2105,7 @@ EIF_TYPED_VALUE F1000_7528 (EIF_REFERENCE Current)
 		RTCT("result_positive", EX_POST);
 		tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5012, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 		ur1 = RTCCL(tr1);
-		tb1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(1318, "is_greater_equal", Result))(Result, ur1x)).it_b);
+		tb1 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE, EIF_TYPED_VALUE)) RTVF(1345, "is_greater_equal", Result))(Result, ur1x)).it_b);
 		if (tb1) {
 			RTCK;
 		} else {
