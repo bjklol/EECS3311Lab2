@@ -70,116 +70,120 @@ feature -- Commands
 			game.is_won and game.is_over
 		end
 
-	wins_cross_board
+wins_cross_board
 			-- Win a cross board.
 		require
-				current_game_is_cross:
-				game.out ~ templates.cross_board
-			local
+			current_game_is_cross: game.board ~ templates.cross_board
+		local
 			assertion: BOOLEAN
 		do
-		assertion := game.out ~ "[
-			Game is over: No
-			Game is won : No
-			Board Status:
-			**...**
-			**.O.**
-			..OOO..
-			...O...
-			...O...
-			**...**
-			**...**	]"
-			check assertion end
-
-			game.move_right (3, 4)
 			assertion := game.out ~ "[
 				Game is over: No
 				Game is won : No
 				Board Status:
 				**...**
 				**.O.**
-				..O..O.
+				..OOO..
 				...O...
 				...O...
 				**...**
 				**...**
-				]"
-			check assertion end
-
+			]"
+			check
+				assertion
+			end
+			game.move_left (3, 4)
+			assertion := game.out ~ "[
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**...**
+				**.O.**
+				.O..O..
+				...O...
+				...O...
+				**...**
+				**...**
+			]"
+			check
+				assertion
+			end
 			game.move_up (5, 4)
 			assertion := game.out ~ "[
-			Game is over: No
-			Game is won : No
-			Board Status:
-			**...**
-			**.O.**
-			..OO.O.
-			.......
-			.......
-			**...**
-			**...**
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**...**
+				**.O.**
+				.O.OO..
+				.......
+				.......
+				**...**
+				**...**
 			]"
-			check assertion end
-
-			game.move_right (3, 3)
+			check
+				assertion
+			end
+			game.move_left (3, 5)
 			assertion := game.out ~ "[
-			Game is over: No
-			Game is won : No
-			Board Status:
-			**...**
-			**.O.**
-			....OO.
-			.......
-			.......
-			**...**
-			**...**
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**...**
+				**.O.**
+				.OO....
+				.......
+				.......
+				**...**
+				**...**
 			]"
-			check assertion end
-
-			game.move_left (3, 6)
+			check
+				assertion
+			end
+			game.move_right (3, 2)
 			assertion := game.out ~ "[
-			Game is over: No
-			Game is won : No
-			Board Status:
-			**...**
-			**.O.**
-			...O...
-			.......
-			....... 
-			**...** 
-			**...**
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**...**
+				**.O.**
+				...O...
+				.......
+				.......
+				**...**
+				**...**
 			]"
-			check assertion end
-
-			game.move_down (2, 4)
+			check
+				assertion
+			end
+			game.move_up (3, 4)
 			assertion := game.out ~ "[
-			Game is over: Yes
-			Game is won : Yes
-			Board Status:
-			**...**
-		 	**...**
-			.......
-			...O...
-			....... 
-			**...** 
-			**...**
+				Game is over: Yes
+				Game is won : Yes
+				Board Status:
+				**.O.**
+				**...**
+				.......
+				.......
+				.......
+				**...**
+				**...**
 			]"
-			check assertion end
-
+			check
+				assertion
+			end
 		ensure
 			finished_and_won_game:
 			game.is_won and game.is_over
 		end
-
-	wins_plus_board
+wins_plus_board
 			-- Win a plus board.
 		require
-			current_game_is_plus:
-				game.out ~ templates.plus_board
+			current_game_is_plus: game.board ~ templates.plus_board
 		local
 			assertion: BOOLEAN
 		do
-		assertion := game.out ~ "[
+			assertion := game.out ~ "[
 				Game is over: No
 				Game is won : No
 				Board Status:
@@ -190,116 +194,124 @@ feature -- Commands
 				...O...
 				**.O.**
 				**...**
-	 			]"
-				check assertion end
-
-				game.move_down(5, 4)
-				assertion := game.out ~ "[
+			]"
+			check
+				assertion
+			end
+			game.move_up (3, 4)
+			assertion := game.out ~ "[
 				Game is over: No
 				Game is won : No
 				Board Status:
-				**...**
 				**.O.**
-				...O...
+				**...**
+				.......
 				.OOOOO.
-				.......
-				**...**
+				...O...
 				**.O.**
-	 			]"
-				check assertion end
-
-				game.move_down(3, 4)
-				assertion := game.out ~ "[
+				**...**
+			]"
+			check
+				assertion
+			end
+			game.move_up (5, 4)
+			assertion := game.out ~ "[
 				Game is over: No
 				Game is won : No
 				Board Status:
-				**...**
 				**.O.**
-				.......
+				**...**
+				...O...
 				.OO.OO.
-				...O...
-				**...**
+				.......
 				**.O.**
-	 			]"
-				check assertion end
-
-				game.move_left (4, 6)
-				assertion := game.out ~ "[
+				**...**
+			]"
+			check
+				assertion
+			end
+			game.move_right (4, 2)
+			assertion := game.out ~ "[
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**.O.**
+				**...**
+				...O...
+				...OOO.
+				.......
+				**.O.**
+				**...**
+			]"
+			check
+				assertion
+			end
+			game.move_up (4, 4)
+			assertion := game.out ~ "[
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**.O.**
+				**.O.**
+				.......
+				....OO.
+				.......
+				**.O.**
+				**...**
+			]"
+			check
+				assertion
+			end
+			game.move_left (4, 6)
+			assertion := game.out ~ "[
+				Game is over: No
+				Game is won : No
+				Board Status:
+				**.O.**
+				**.O.**
+				.......
+				...O...
+				.......
+				**.O.**
+				**...**
+			]"
+			check
+				assertion
+			end
+			game.move_down (1, 4)
+			assertion := game.out ~ "[
 				Game is over: No
 				Game is won : No
 				Board Status:
 				**...**
-				**.O.**
-				.......
-				.OOO...
-				...O...
 				**...**
+				...O...
+				...O...
+				.......
 				**.O.**
-	 			]"
-				check assertion end
-
-				game.move_down (4, 4)
-				assertion := game.out ~ "[
+				**...**
+			]"
+			check
+				assertion
+			end
+			game.move_down (3, 4)
+			assertion := game.out ~ "[
 				Game is over: No
 				Game is won : No
 				Board Status:
 				**...**
-				**.O.**
-				.......
-				.OO....
-				.......
-				**.O.**
-				**.O.**
-	 			]"
-				check assertion end
-
-				game.move_right(4, 1)
-				assertion := game.out ~ "[
-				Game is over: No
-				Game is won : No
-				Board Status:
 				**...**
-				**.O.**
+				.......
 				.......
 				...O...
-				.......
 				**.O.**
-				**.O.**
-	 			]"
-				check assertion end
-
-				game.move_up (7, 4)
-				assertion := game.out ~ "[
-				Game is over: No
-				Game is won : No
-				Board Status:
 				**...**
-				**.O.**
-				......
-				...O...
-				...O...
-				**...**
-				**...**
-	 			]"
-				check assertion end
-
-				game.move_up (5, 4)
-				assertion := game.out ~ "[
-				Game is over: No
-				Game is won : No
-				Board Status:
-				**...**
-				**.O.**
-				...O..
-				.......
-				.......
-				**...**
-				**...**
-	 			]"
-				check assertion end
-
-				game.move_down (2, 4)
-				assertion := game.out ~ "[
+			]"
+			check
+				assertion
+			end
+			game.move_up (6, 4)
+			assertion := game.out ~ "[
 				Game is over: Yes
 				Game is won : Yes
 				Board Status:
@@ -310,8 +322,10 @@ feature -- Commands
 				.......
 				**...**
 				**...**
-	 			]"
-				check assertion end
+			]"
+			check
+				assertion
+			end
 		ensure
 			finished_and_won_game:
 				game.is_won and game.is_over

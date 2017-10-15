@@ -190,12 +190,12 @@ feature -- Commands
 		require
 			from_slot_valid_column:
 				board.is_valid_column (c)
-			from_slot_valid_row:
-				r <= 5 and r >= 1
-			middle_slot_valid_row:
-			r +1 >= 2 and r+1 <= 6
-			to_slot_valid_row:
-				r +2 >= 1 and r +2  <= 7
+				from_slot_valid_row:
+				board.is_valid_row (r)
+				middle_slot_valid_row:
+				board.is_valid_row (r + 1)
+				to_slot_valid_row:
+				board.is_valid_row (r + 2)
 			from_slot_occupied:
 				board.status_of (r,c) = board.occupied_slot
 			middle_slot_occupied:

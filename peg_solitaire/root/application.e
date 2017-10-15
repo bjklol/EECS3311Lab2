@@ -20,6 +20,7 @@ feature {NONE} -- Initialization
 			add_test (create {TEST_PEG_SOLITAIRE}.make)
 			add_test (create {TEST_GOOD_PLAYER}.make)
 			add_test (create {TEST_BAD_PLAYER}.make)
+			add_test (create {STUDENT_TESTS}.make)
 
 			show_browser
 			run_espec

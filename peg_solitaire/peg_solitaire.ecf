@@ -22,6 +22,8 @@
 		<cluster name="game" location=".\game\" recursive="true"/>
 		<cluster name="root" location=".\root\" recursive="true"/>
 		<cluster name="slot" location=".\slot\" recursive="true"/>
-		<cluster name="tests" location=".\tests\" recursive="true"/>
+		<cluster name="tests" location=".\tests\" recursive="true">
+			<cluster name="student" location=".\student\"/>
+		</cluster>
 	</target>
 </system>
