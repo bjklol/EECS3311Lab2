@@ -42,7 +42,7 @@ feature -- Tests
 				player: GOOD_PLAYER
 			do
 				comment ("test2: good player wins an plus board")
-				create playermake
+				create player.make
 
 				player.game.make_plus
 				player.wins_plus_board
