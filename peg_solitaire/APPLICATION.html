@@ -3,18 +3,18 @@
 <base target="main">
 </head>
 <body>
-<p align="center"><b>Test Run:10/15/2017   12:44:00.885 PM</b></p><font color="blue"><H2  align="center">APPLICATION</H2></font><p align="center">Note: * indicates a violation test case</p>
+<p align="center"><b>Test Run:10/15/2017   2:53:41.540 PM</b></p><font color="blue"><H2  align="center">APPLICATION</H2></font><p align="center">Note: * indicates a violation test case</p>
 <table border=1 align="center">
-<tr><td bgcolor="#FF0000" colspan="3">&nbsp;</td></tr><tr><td align="center" colspan="3">FAILED (1 failed & 4 passed out of 5)</td></tr>
+<tr><td bgcolor="#FF0000" colspan="3">&nbsp;</td></tr><tr><td align="center" colspan="3">FAILED (2 failed & 4 passed out of 6)</td></tr>
 <tr><td align="center" bgcolor="#000080"><font color="#FFCC00"><b>Case Type</b></font></td>
 <td align="center" bgcolor="#000080"><font color="#FFCC00"><b>Passed</b></font></td>
 <td align="center" bgcolor="#000080"><font color="#FFCC00"><b>Total</b></font></td></tr>
 <tr><td align="center"><font color="blue"><b>Violation</b></font></td>
 <td align="center">0</td><td align="center">0</td></tr>
 <tr><td align="center"><font color="blue"><b>Boolean</b></font></td>
-<td align="center">4</td><td align="center">5</td></tr>
+<td align="center">4</td><td align="center">6</td></tr>
 <tr><td align="center"><font color="blue"><b>All Cases</b></font></td>
-<td align="center">4</td><td align="center">5</td></tr>
+<td align="center">4</td><td align="center">6</td></tr>
 <tr><td align="center" bgcolor="#000080"><font color="#FFCC00"><b>State</b></font></td>
 <td align="center" bgcolor="#000080"><font color="#FFCC00"><b>Contract Violation</b></font></td>
 <td align="center" bgcolor="#000080"><font color="#FFCC00"><b>Test Name</b></font></td></tr>
@@ -26,7 +26,15 @@
 <tr><td bgcolor="#008080" align="center"><font color="#FFCC00"><b>Test2</b></font></td>
 <td bgcolor="#008080" align="center" colspan="2"><font color="#FFCC00">TEST_GOOD_PLAYER</font></td></tr><tr><td><font color="green"><b>PASSED</b></font></td>
 <td align="center">NONE</td>
-<td>test: good player wins an easy board</td>
+<td>test1: good player wins an easy board</td>
+</tr>
+<tr><td><font color="red"><b>FAILED</b></font></td>
+<td align="center">Precondition violated.</td>
+<td>test2: good player wins an plus board</td>
+</tr>
+<tr><td><font color="red"><b>FAILED</b></font></td>
+<td align="center">Precondition violated.</td>
+<td>test3: good player wins cross board</td>
 </tr>
 <tr><td bgcolor="#008080" align="center"><font color="#FFCC00"><b>Test3</b></font></td>
 <td bgcolor="#008080" align="center" colspan="2"><font color="#FFCC00">TEST_BAD_PLAYER</font></td></tr><tr><td><font color="green"><b>PASSED</b></font></td>
@@ -36,10 +44,6 @@
 <tr><td><font color="green"><b>PASSED</b></font></td>
 <td align="center">NONE</td>
 <td>test2: test different boards using the out feature</td>
-</tr>
-<tr><td><font color="red"><b>FAILED</b></font></td>
-<td align="center">Precondition violated.</td>
-<td>test1: Test to make sure game is over but not won using number of occupied slots </td>
 </tr>
 </table></body>
 </html>

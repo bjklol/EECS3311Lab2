@@ -288,7 +288,7 @@ feature -- Commands
 						**.O.**
 						]"
 						check assertion end
-					game.move_down(5,5)
+					game.move_down(4,5)
 					assertion := game.out ~ "[
 						Game is over: No
 						Game is won : No

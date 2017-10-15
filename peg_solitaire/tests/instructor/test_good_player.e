@@ -17,6 +17,9 @@ feature -- Constructor
 	make
 		do
 			add_boolean_case (agent test_good_player_wins_easy_board)
+			add_boolean_case (agent test_good_player_wins_plus_board)
+			add_boolean_case (agent test_good_player_wins_cross_board)
+
 		end
 
 feature -- Tests
@@ -24,7 +27,7 @@ feature -- Tests
 		local
 			player: GOOD_PLAYER
 		do
-			comment ("test: good player wins an easy board")
+			comment ("test1: good player wins an easy board")
 			create player.make
 
 			player.game.make_easy
@@ -34,4 +37,32 @@ feature -- Tests
 				and player.game.is_won
 			check Result end
 		end
+		test_good_player_wins_plus_board: BOOLEAN
+			local
+				player: GOOD_PLAYER
+			do
+				comment ("test2: good player wins an plus board")
+				create playermake
+
+				player.game.make_plus
+				player.wins_plus_board
+				Result :=
+						player.game.is_over
+					and player.game.is_won
+				check Result end
+			end
+			test_good_player_wins_cross_board: BOOLEAN
+					local
+						player: GOOD_PLAYER
+					do
+						comment ("test3: good player wins cross board")
+						create player.make
+
+						player.game.make_cross
+						player.wins_cross_board
+						Result :=
+								player.game.is_over
+							and player.game.is_won
+						check Result end
+					end
 end

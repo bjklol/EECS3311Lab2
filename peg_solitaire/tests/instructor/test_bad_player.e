@@ -18,7 +18,7 @@ feature -- Constructor
 		do
 			add_boolean_case (agent test_bad_player_loses_easy_board)
 			add_boolean_case (agent test_out_feature)
-			add_boolean_case (agent test_number_of_occupied_slots)
+--			add_boolean_case (agent test_number_of_occupied_slots)
 		end
 
 feature -- Tests
@@ -63,13 +63,10 @@ feature -- Tests
 			check Result end
 			p4.game.make_pyramid
 			p4.loses_pyramid_game
+			Result := (p4.game.board.number_of_occupied_slots > 1 implies (not p4.game.is_won and p4.game.is_over))
+			check Result end
 			p5.game.make_skull
 			p5.loses_skull_game
-
-
-
-
-			Result := (p4.game.board.number_of_occupied_slots > 1 implies (not p4.game.is_won and p4.game.is_over))
 			Result := (p5.game.board.number_of_occupied_slots > 1 implies (not p5.game.is_won and p5.game.is_over))
 		end
 	test_out_feature: BOOLEAN

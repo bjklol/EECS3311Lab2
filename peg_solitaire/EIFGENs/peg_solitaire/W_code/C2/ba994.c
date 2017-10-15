@@ -657,8 +657,8 @@ body:;
 	RTHOOK(19);
 	tr1 = ((up1x = (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTWF(5202, dtype))(Current)), (((up1x.type & SK_HEAD) == SK_REF)? (EIF_REFERENCE) 0: (up1x.it_r = RTBU(up1x))), (up1x.type = SK_POINTER), up1x.it_r);
 	RTNHOOK(19,1);
-	ui4_1 = ((EIF_INTEGER_32) 4L);
-	ui4_2 = ((EIF_INTEGER_32) 5L);
+	ui4_1 = ((EIF_INTEGER_32) 5L);
+	ui4_2 = ((EIF_INTEGER_32) 1L);
 	(FUNCTION_CAST(void, (EIF_REFERENCE, EIF_TYPED_VALUE, EIF_TYPED_VALUE)) RTVF(4993, "move_down", tr1))(tr1, ui4_1x, ui4_2x);
 	RTHOOK(20);
 	RTDBGAL(Current, 1, 0x04000000, 1, 0); /* loc1 */
