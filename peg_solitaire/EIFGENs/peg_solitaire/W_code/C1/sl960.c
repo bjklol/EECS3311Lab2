@@ -13,7 +13,7 @@ extern "C" {
 extern EIF_TYPED_VALUE F960_7105(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F960_7106(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F960_7107(EIF_REFERENCE);
-extern void F960_7797(EIF_REFERENCE, int);
+extern void F960_7799(EIF_REFERENCE, int);
 extern void EIF_Minit960(void);
 
 #ifdef __cplusplus
@@ -68,7 +68,7 @@ EIF_TYPED_VALUE F960_7105 (EIF_REFERENCE Current)
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80003DB, 0,0); /* Result */
 	tr1 = RTLN(eif_new_type(987, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5196, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5198, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
@@ -117,7 +117,7 @@ EIF_TYPED_VALUE F960_7106 (EIF_REFERENCE Current)
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80003DE, 0,0); /* Result */
 	tr1 = RTLN(eif_new_type(990, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5198, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5200, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
@@ -166,7 +166,7 @@ EIF_TYPED_VALUE F960_7107 (EIF_REFERENCE Current)
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80003DD, 0,0); /* Result */
 	tr1 = RTLN(eif_new_type(989, 0x01).id);
-	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5197, Dtype(tr1)))(tr1);
+	(FUNCTION_CAST(void, (EIF_REFERENCE)) RTWC(5199, Dtype(tr1)))(tr1);
 	RTNHOOK(1,1);
 	Result = (EIF_REFERENCE) RTCCL(tr1);
 	RTVI(Current, RTAL);
@@ -183,7 +183,7 @@ EIF_TYPED_VALUE F960_7107 (EIF_REFERENCE Current)
 }
 
 /* {SLOT_STATUS_ACCESS}._invariant */
-void F960_7797 (EIF_REFERENCE Current, int where)
+void F960_7799 (EIF_REFERENCE Current, int where)
 {
 	GTCX
 	char *l_feature_name = "_invariant";
@@ -207,7 +207,7 @@ void F960_7797 (EIF_REFERENCE Current, int where)
 	RTLIU(3);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
-	RTEAINV(l_feature_name, 959, Current, 0, 7796);
+	RTEAINV(l_feature_name, 959, Current, 0, 7798);
 	RTSA(dtype);
 	RTME(dtype, 0);
 	RTIT("singleton_slot_statuses", Current);

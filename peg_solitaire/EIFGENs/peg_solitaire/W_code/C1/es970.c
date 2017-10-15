@@ -275,10 +275,10 @@ void F970_7224 (EIF_REFERENCE Current)
 					RTCF0;
 				}
 				RTHOOK(16);
-				tb3 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5212, "is_violation_case", loc4))(loc4)).it_b);
+				tb3 = (((FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5214, "is_violation_case", loc4))(loc4)).it_b);
 				if (tb3) {
 					RTHOOK(17);
-					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5215, "passed", loc4));
+					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5217, "passed", loc4));
 					if (tb3) {
 						RTHOOK(18);
 						RTDBGAA(Current, dtype, 5042, 0x10000000, 1); /* number_passed_violation */
@@ -292,7 +292,7 @@ void F970_7224 (EIF_REFERENCE Current)
 					(*(EIF_INTEGER_32 *)(Current + RTWA(5041, dtype)))++;
 				} else {
 					RTHOOK(21);
-					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5215, "passed", loc4));
+					tb3 = *(EIF_BOOLEAN *)(loc4 + RTVA(5217, "passed", loc4));
 					if (tb3) {
 						RTHOOK(22);
 						RTDBGAA(Current, dtype, 5040, 0x10000000, 1); /* number_passed_boolean */

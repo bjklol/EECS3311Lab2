@@ -238,15 +238,15 @@ feature -- Commands
 						Game is won : No
 						Board Status:
 						**.O.**
-						**OO.**
-						.OOO.O.
-						...OO..
+						**.OO**
+						.O.OOO.
+						..OO...
 						...O...
 						**OOO**
 						**OOO**
 						]"
 						check assertion end
-				game.move_down(2,1)
+				game.move_down(2,5)
 				assertion := game.out ~ "[
 						Game is over: No
 						Game is won : No

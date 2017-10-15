@@ -100,6 +100,13 @@ EIF_TYPED_VALUE _A977_77 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VA
 	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5106, "test_bad_player_loses_easy_board", closed [1].it_r))(closed [1].it_r);
 }
 
+	/* TEST_BAD_PLAYER test_out_feature */
+EIF_TYPED_VALUE _A977_78 (EIF_TYPED_VALUE(*f_ptr) (EIF_REFERENCE) , EIF_TYPED_VALUE * closed, EIF_TYPED_VALUE * open)
+{
+	GTCX
+	return (FUNCTION_CAST(EIF_TYPED_VALUE, (EIF_REFERENCE)) RTVF(5107, "test_out_feature", closed [1].it_r))(closed [1].it_r);
+}
+
 
 static fnptr feif_address_table[] = {
 (fnptr)0,

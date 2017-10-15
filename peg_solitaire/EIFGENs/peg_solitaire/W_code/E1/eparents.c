@@ -4056,13 +4056,13 @@ static struct eif_par_types par1011 = {1011, ptf1011, (uint16) 2, (uint16) 0, (c
 static EIF_TYPE_INDEX ptf1012[] = {1001,0xFFF7,984,0xFFF7,1010,0xFFF7,141,0xFFFF};
 static struct eif_par_types par1012 = {1012, ptf1012, (uint16) 4, (uint16) 0, (char) 0};
 
-/* TYPE [SLOT_STATUS_ACCESS] */
-static EIF_TYPE_INDEX ptf1013[] = {183,0xFFF7,104,0xFFF7,141,0xFFFF};
-static struct eif_par_types par1013 = {1013, ptf1013, (uint16) 3, (uint16) 1, (char) 0};
-
 /* INTERVAL [G#1] */
-static EIF_TYPE_INDEX ptf1014[] = {104,0xFFFF};
-static struct eif_par_types par1014 = {1014, ptf1014, (uint16) 1, (uint16) 1, (char) 0};
+static EIF_TYPE_INDEX ptf1013[] = {104,0xFFFF};
+static struct eif_par_types par1013 = {1013, ptf1013, (uint16) 1, (uint16) 1, (char) 0};
+
+/* TYPE [SLOT_STATUS_ACCESS] */
+static EIF_TYPE_INDEX ptf1014[] = {183,0xFFF7,104,0xFFF7,141,0xFFFF};
+static struct eif_par_types par1014 = {1014, ptf1014, (uint16) 3, (uint16) 1, (char) 0};
 
 /* TYPE [BOARD_TEMPLATES_ACCESS] */
 static EIF_TYPE_INDEX ptf1015[] = {183,0xFFF7,104,0xFFF7,141,0xFFFF};

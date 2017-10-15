@@ -5841,14 +5841,14 @@ char *names1013 [] =
 
 char *names1014 [] =
 {
-"internal_name_32",
-"internal_name",
+"start_bound",
+"end_bound",
 };
 
 char *names1015 [] =
 {
-"start_bound",
-"end_bound",
+"internal_name_32",
+"internal_name",
 };
 
 char *names1016 [] =

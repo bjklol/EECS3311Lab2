@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-extern EIF_TYPED_VALUE F987_7390(EIF_REFERENCE, EIF_TYPED_VALUE);
+extern EIF_TYPED_VALUE F987_7392(EIF_REFERENCE, EIF_TYPED_VALUE);
 extern void EIF_Minit987(void);
 
 #ifdef __cplusplus
@@ -33,7 +33,7 @@ extern "C" {
 #endif
 
 /* {SLOT_STATUS}.is_equal */
-EIF_TYPED_VALUE F987_7390 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
+EIF_TYPED_VALUE F987_7392 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 {
 	GTCX
 	char *l_feature_name = "is_equal";
@@ -60,12 +60,12 @@ EIF_TYPED_VALUE F987_7390 (EIF_REFERENCE Current, EIF_TYPED_VALUE arg1x)
 	RTLU(SK_REF,&arg1);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 986, Current, 0, 1, 13638);
+	RTEAA(l_feature_name, 986, Current, 0, 1, 13640);
 	RTSA(dtype);
 	RTSC;
 	RTME(dtype, 0);
 	RTGC;
-	RTDBGEAA(986, Current, 13638);
+	RTDBGEAA(986, Current, 13640);
 	RTCC(arg1, 986, l_feature_name, 1, eif_new_type(986, 0x01),0);
 	RTIV(Current, RTAL);
 	if ((RTAL & CK_REQUIRE) || RTAC) {

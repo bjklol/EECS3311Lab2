@@ -10,8 +10,8 @@
 extern "C" {
 #endif
 
-extern void F990_7393(EIF_REFERENCE);
-extern EIF_TYPED_VALUE F990_7394(EIF_REFERENCE);
+extern void F990_7395(EIF_REFERENCE);
+extern EIF_TYPED_VALUE F990_7396(EIF_REFERENCE);
 extern void EIF_Minit990(void);
 
 #ifdef __cplusplus
@@ -34,7 +34,7 @@ extern "C" {
 #endif
 
 /* {UNOCCUPIED_SLOT}.make */
-void F990_7393 (EIF_REFERENCE Current)
+void F990_7395 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "make";
@@ -49,12 +49,12 @@ void F990_7393 (EIF_REFERENCE Current)
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 989, Current, 0, 0, 13641);
+	RTEAA(l_feature_name, 989, Current, 0, 0, 13643);
 	RTSA(Dtype(Current));
 	RTSC;
 	RTME(Dtype(Current), 0);
 	RTGC;
-	RTDBGEAA(989, Current, 13641);
+	RTDBGEAA(989, Current, 13643);
 	RTIV(Current, RTAL);
 	RTVI(Current, RTAL);
 	RTRS;
@@ -67,7 +67,7 @@ void F990_7393 (EIF_REFERENCE Current)
 }
 
 /* {UNOCCUPIED_SLOT}.out */
-EIF_TYPED_VALUE F990_7394 (EIF_REFERENCE Current)
+EIF_TYPED_VALUE F990_7396 (EIF_REFERENCE Current)
 {
 	GTCX
 	char *l_feature_name = "out";
@@ -92,12 +92,12 @@ EIF_TYPED_VALUE F990_7394 (EIF_REFERENCE Current)
 	RTLU (SK_REF, &Result);
 	RTLU (SK_REF, &Current);
 	
-	RTEAA(l_feature_name, 989, Current, 0, 0, 13642);
+	RTEAA(l_feature_name, 989, Current, 0, 0, 13644);
 	RTSA(dtype);
 	RTSC;
 	RTME(dtype, 0);
 	RTGC;
-	RTDBGEAA(989, Current, 13642);
+	RTDBGEAA(989, Current, 13644);
 	RTIV(Current, RTAL);
 	RTHOOK(1);
 	RTDBGAL(Current, 0, 0xF80000E7, 0,0); /* Result */

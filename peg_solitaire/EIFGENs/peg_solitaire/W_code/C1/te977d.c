@@ -116,6 +116,8 @@ static const struct desc_info desc_977[] = {
 	{EIF_GENERIC(egt_25_977), 13549, 40},
 	{EIF_GENERIC(NULL), 13555, 0xFFFFFFFF},
 	{EIF_NON_GENERIC(0x018F /*199*/), 13556, 0xFFFFFFFF},
+	{EIF_NON_GENERIC(0x018F /*199*/), 13557, 0xFFFFFFFF},
+	{EIF_NON_GENERIC(0x018F /*199*/), 13558, 0xFFFFFFFF},
 };
 void Init977(void)
 {

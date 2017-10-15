@@ -788,7 +788,7 @@ static EIF_TYPE_INDEX dyn_types11 [] = {
 895,
 899,
 905,
-1013,
+1014,
 1015,
 };
 
@@ -1109,7 +1109,7 @@ SK_INVALID
 };
 
 static EIF_TYPE_INDEX dyn_types401 [] = {
-1014,
+1013,
 };
 
 static uint32 patterns81 [] = {
