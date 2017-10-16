@@ -27,7 +27,7 @@ extern EIF_TYPED_VALUE F962_7146(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F962_7147(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F962_7148(EIF_REFERENCE);
 extern EIF_TYPED_VALUE F962_7149(EIF_REFERENCE);
-extern void F962_7800(EIF_REFERENCE, int);
+extern void F962_7803(EIF_REFERENCE, int);
 extern void EIF_Minit962(void);
 
 #ifdef __cplusplus
@@ -342,7 +342,7 @@ EIF_TYPED_VALUE F962_7149 (EIF_REFERENCE Current)
 
 
 /* {BOARD_TEMPLATES}._invariant */
-void F962_7800 (EIF_REFERENCE Current, int where)
+void F962_7803 (EIF_REFERENCE Current, int where)
 {
 	GTCX
 	char *l_feature_name = "_invariant";
@@ -364,7 +364,7 @@ void F962_7800 (EIF_REFERENCE Current, int where)
 	RTLIU(3);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
-	RTEAINV(l_feature_name, 961, Current, 0, 7799);
+	RTEAINV(l_feature_name, 961, Current, 0, 7802);
 	RTSA(dtype);
 	RTME(dtype, 0);
 	RTIT("correct_default_board_output", Current);

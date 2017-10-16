@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 extern EIF_TYPED_VALUE F965_7172(EIF_REFERENCE);
-extern void F965_7801(EIF_REFERENCE, int);
+extern void F965_7804(EIF_REFERENCE, int);
 extern void EIF_Minit965(void);
 
 #ifdef __cplusplus
@@ -83,7 +83,7 @@ EIF_TYPED_VALUE F965_7172 (EIF_REFERENCE Current)
 }
 
 /* {BOARD_TEMPLATES_ACCESS}._invariant */
-void F965_7801 (EIF_REFERENCE Current, int where)
+void F965_7804 (EIF_REFERENCE Current, int where)
 {
 	GTCX
 	char *l_feature_name = "_invariant";
@@ -105,7 +105,7 @@ void F965_7801 (EIF_REFERENCE Current, int where)
 	RTLIU(3);
 	RTLU (SK_VOID, NULL);
 	RTLU (SK_REF, &Current);
-	RTEAINV(l_feature_name, 964, Current, 0, 7800);
+	RTEAINV(l_feature_name, 964, Current, 0, 7803);
 	RTSA(dtype);
 	RTME(dtype, 0);
 	RTIT("singleton_templates", Current);

@@ -114,4 +114,11 @@ feature -- Constructor
 								and player.game.is_won
 							check Result end
 						end
+		test_slots_properly_set:
+			local
+				player: BAD_PLAYER
+		do
+		
+		end
+
 end
